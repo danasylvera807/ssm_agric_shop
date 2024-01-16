@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group3.mapper.ProductMapper">
+    <resultMap id="productResultMap" type="Product">
+        <id column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="description" property="productDescription"/>
+        <result column="price" property="productPrice"/>
+        <result column="stock" property="productStock"/>
+        <result column="image_url" property="productImageUrl"/>
+        <result column="origin" property="productOrigin"/>
+        <result column="production_date" property="productProductionDate"/>
+        <result column="category_id" property="categoryId"/>
+    </resultMap>
+    <!--查询所有农产品-->
+    <select id="getAllProducts" resultMap="productResultMap">
+
+    </select>
+    <!--根据农产品名模糊查询-->
+    <select id="getProductsByKeyword" resultMap="productResultMap">
+        SELECT * FROM product
+        WHERE product_name LIKE CONCAT('%',#{keyword},'%')
+    </select>
+
+
+    <!--根据分类查询农产品-->
+    <select id="getProductsByCategoryId" resultMap="productResultMap">
+        SELECT * FROM category c
+        LEFT JOIN product p ON c.category_id = p.category_id
+        WHERE c.category_id = #{categoryId}
+    </select>
+
+    <!--添加新的农产品-->
+    <insert id="addProduct" parameterType="Product">
+        INSERT INTO product (
+                             product_name,
+                             `description`,
+                             price,
+                             stock,
+                             image_url,
+                             origin,
+                             production_date,
+                             category_id
+        ) VALUES (
+                  #{productName},
+                  #{productDescription},
+                  #{productPrice},
+                  #{productStock},
+                  #{productImageUrl},
+                  #{productOrigin},
+                  #{productProductionDate},
+                  #{categoryId}
+                 );
+    </insert>
+    <!--更新农产品信息-->
+    <update id="updateProduct" parameterType="Product">
+        UPDATE product
+        SET product_name = #{productName},
+            `description` = #{productDescription},
+            price = #{productPrice},
+            stock = #{productStock},
+            image_url = #{productImageUrl},
+            origin = #{productOrigin},
+            production_date = #{productProductionDate},
+            category_id = #{categoryId}
+        WHERE product_id = #{productId}
+    </update>
+    <!--删除农产品-->
+    <delete id="deleteProduct" parameterType="int">
+        DELETE FROM product WHERE product_id = #{productId}
+    </delete>
+
+</mapper>

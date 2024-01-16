@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 日志文件 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--    配置数据源，交给spring去做-->
+    <typeAliases>
+        <package name="com.group3.pojo"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+            <!--pageNum超出范围时，默认为第一页或最后一页，value默认为false-->
+            <property name="reasonable" value="true"/>
+
+        </plugin>
+    </plugins>
+    <mappers>
+        <mapper resource="mapper/CartMapper.xml"/>
+        <mapper resource="mapper/CategoryMapper.xml"/>
+        <mapper resource="mapper/OrderMapper.xml"/>
+        <mapper resource="mapper/PaymentMapper.xml"/>
+        <mapper resource="mapper/ProductMapper.xml"/>
+        <mapper resource="mapper/ReviewMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/TestMapper.xml"/>
+    </mappers>
+
+</configuration>

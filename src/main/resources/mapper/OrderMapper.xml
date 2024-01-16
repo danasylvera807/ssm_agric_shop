@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group3.mapper.OrderMapper">
+    <!-- 定义 ResultMap -->
+    <resultMap id="orderResultMap" type="Order">
+        <!-- 主键映射 -->
+        <id property="orderId" column="order_id" jdbcType="INTEGER"/>
+        <!-- 普通属性映射 -->
+        <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
+        <result property="orderStatus" column="order_status" jdbcType="VARCHAR"/>
+        <result property="orderTotalAmount" column="order_total_amount" jdbcType="DOUBLE"/>
+        <result property="shippingAddress" column="shipping_address" jdbcType="VARCHAR"/>
+        <result property="logisticInfo" column="logistics_info" jdbcType="VARCHAR"/>
+
+        <!-- 定义 orderUser 的关联关系 -->
+        <association property="orderUser" javaType="User" resultMap="com.group3.mapper.UserMapper.userResultMap">
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <!-- 其他 userResultMap 中的属性映射 -->
+        </association>
+    </resultMap>
+
+    <!-- 查询单个订单信息 -->
+    <select id="getOrderById" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        WHERE order_id = #{orderId}
+    </select>
+
+    <!-- 查询某用户的所有订单 -->
+    <select id="getOrdersByUserId" resultMap="orderResultMap">
+        SELECT * FROM `order` o
+        LEFT JOIN user u ON o.user_id = u.user_id
+        WHERE order_id = #{orderId}
+    </select>
+
+    <!-- 查询所有订单 -->
+    <select id="getAllOrders" resultMap="orderResultMap">
+        SELECT * FROM `order`
+    </select>
+    <!-- 根据订单状态查询订单 -->
+    <select id="getOrdersByStatus" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        WHERE order_status = #{orderStatus}
+    </select>
+
+    <!-- 添加订单 -->
+    <insert id="addOrder" parameterType="Order">
+        INSERT INTO `order` (user_id, order_time, order_status, order_total_amount, shipping_address, logistics_info)
+        VALUES (#{orderUser.userId}, #{orderTime}, #{orderStatus}, #{orderTotalAmount}, #{shippingAddress}, #{logisticInfo})
+    </insert>
+
+    <!-- 更新订单信息 -->
+    <update id="updateOrder" parameterType="Order">
+        UPDATE `order`
+        SET order_time = #{orderTime}, order_status = #{orderStatus}, order_total_amount = #{orderTotalAmount},
+            shipping_address = #{shippingAddress}, logistics_info = #{logisticInfo}
+        WHERE order_id = #{orderId}
+    </update>
+
+    <!-- 删除订单 -->
+    <delete id="deleteOrder" parameterType="int">
+        DELETE FROM `order` WHERE order_id = #{orderId}
+    </delete>
+
+</mapper>
