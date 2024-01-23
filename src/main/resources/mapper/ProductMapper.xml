@@ -16,8 +16,15 @@
     </resultMap>
     <!--查询所有农产品-->
     <select id="getAllProducts" resultMap="productResultMap">
-
+        SELECT * FROM product
     </select>
+    <!--查询所有农产品-->
+    <select id="getProductById" resultMap="productResultMap">
+        SELECT * FROM product
+        WHERE product_id = #{productId};
+    </select>
+
+
     <!--根据农产品名模糊查询-->
     <select id="getProductsByKeyword" resultMap="productResultMap">
         SELECT * FROM product

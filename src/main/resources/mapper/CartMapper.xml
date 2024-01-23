@@ -3,5 +3,47 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.group3.mapper.CartMapper">
+    <resultMap id="cartResultMap" type="Cart">
+        <!-- 数据库列名与实体属性的映射关系 -->
+        <id property="cartId" column="cart_id"/>
+        <result property="quantity" column="quantity"/>
+        <result property="cartTime" column="added_time"/>
+        <result property="userId" column="user_id"/>
 
+        <association property="cartProduct" javaType="Product" resultMap="com.group3.mapper.ProductMapper.productResultMap">
+            <id property="productId" column="product_id"/>
+        </association>
+    </resultMap>
+    <!-- 添加商品到购物车 -->
+    <insert id="addProductToCart" parameterType="map">
+        INSERT INTO cart (user_id, product_id, quantity,added_time)
+        VALUES (#{userId}, #{productId}, #{quantity},#{cartTime})
+        ON DUPLICATE KEY UPDATE quantity = quantity + #{quantity}
+    </insert>
+
+    <!-- 更新购物车中商品的数量 -->
+    <update id="updateCartItemQuantity" parameterType="map">
+        UPDATE cart
+        SET quantity = #{quantity}, added_time = #{cartTime}
+        WHERE user_id = #{userId} AND product_id = #{productId}
+    </update>
+
+    <!-- 从购物车中移除商品 -->
+    <delete id="removeProductFromCart" parameterType="map">
+        DELETE FROM cart
+        WHERE user_id = #{userId} AND product_id = #{productId}
+    </delete>
+
+    <!-- 获取用户购物车中的所有商品 -->
+    <select id="getCartItemsByUserId" parameterType="int" resultMap="cartResultMap">
+        SELECT * FROM cart c
+            JOIN product p ON p.product_id = c.product_id
+        WHERE user_id = #{userId}
+    </select>
+
+    <!-- 清空用户购物车 -->
+    <delete id="clearCartByUserId" parameterType="int">
+        DELETE FROM cart
+        WHERE user_id = #{userId}
+    </delete>
 </mapper>

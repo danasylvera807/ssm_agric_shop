@@ -1,14 +1,13 @@
 package com.group3.service;
 
 import com.group3.pojo.User;
-import org.apache.ibatis.annotations.Param;
 
 public interface UserService {
     //注册业务实现
-    public boolean register(User user);
+    int register(String userName, String userPwd);
 
-    //添加一个用户
-    public int add(User user);
+    //密码登录
+    public boolean pwdLogin(String userName,String userPwd);
     //删除一个用户
     public int delete(int userId);
     //更新用户信息

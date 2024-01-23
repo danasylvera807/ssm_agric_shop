@@ -8,8 +8,9 @@
         <!-- 主键映射 -->
         <id property="orderId" column="order_id" jdbcType="INTEGER"/>
         <!-- 普通属性映射 -->
+        <result property="orderNumber" column="order_number" jdbcType="VARCHAR"/>
         <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
-        <result property="orderStatus" column="order_status" jdbcType="VARCHAR"/>
+        <result property="orderState" column="order_status" jdbcType="VARCHAR"/>
         <result property="orderTotalAmount" column="order_total_amount" jdbcType="DOUBLE"/>
         <result property="shippingAddress" column="shipping_address" jdbcType="VARCHAR"/>
         <result property="logisticInfo" column="logistics_info" jdbcType="VARCHAR"/>
@@ -31,7 +32,7 @@
     <select id="getOrdersByUserId" resultMap="orderResultMap">
         SELECT * FROM `order` o
         LEFT JOIN user u ON o.user_id = u.user_id
-        WHERE order_id = #{orderId}
+        WHERE u.user_id = #{userId}
     </select>
 
     <!-- 查询所有订单 -->
@@ -41,23 +42,40 @@
     <!-- 根据订单状态查询订单 -->
     <select id="getOrdersByStatus" resultMap="orderResultMap">
         SELECT * FROM `order`
-        WHERE order_status = #{orderStatus}
+        WHERE order_status = #{orderState}
+    </select>
+    <!-- 根据订单号查询订单 -->
+    <select id="getOrderByNumber" resultMap="orderResultMap">
+        SELECT * FROM `order`
+        WHERE order_number = #{orderNumber}
+        LIMIT 1
     </select>
 
     <!-- 添加订单 -->
     <insert id="addOrder" parameterType="Order">
-        INSERT INTO `order` (user_id, order_time, order_status, order_total_amount, shipping_address, logistics_info)
-        VALUES (#{orderUser.userId}, #{orderTime}, #{orderStatus}, #{orderTotalAmount}, #{shippingAddress}, #{logisticInfo})
+        INSERT INTO `order` (user_id, order_number, order_time, order_status, order_total_amount, shipping_address, logistics_info)
+        VALUES (#{orderUser.userId},#{orderNumber}, #{orderTime}, #{orderState}, #{orderTotalAmount}, #{shippingAddress}, #{logisticInfo})
     </insert>
 
     <!-- 更新订单信息 -->
     <update id="updateOrder" parameterType="Order">
         UPDATE `order`
-        SET order_time = #{orderTime}, order_status = #{orderStatus}, order_total_amount = #{orderTotalAmount},
+        SET order_time = #{orderTime},order_number = #{orderNumber}, order_status = #{orderState}, order_total_amount = #{orderTotalAmount},
             shipping_address = #{shippingAddress}, logistics_info = #{logisticInfo}
         WHERE order_id = #{orderId}
     </update>
-
+    <!-- 更新订单状态 -->
+    <update id="updateOrderState">
+        UPDATE `order`
+        SET order_status = #{orderState}
+        WHERE order_id = #{orderId}
+    </update>
+    <!-- 更新订单地址 -->
+    <update id="updateOrderAddr">
+        UPDATE `order`
+        SET shipping_address = #{shippingAddress}
+        WHERE order_id = #{orderId}
+    </update>
     <!-- 删除订单 -->
     <delete id="deleteOrder" parameterType="int">
         DELETE FROM `order` WHERE order_id = #{orderId}

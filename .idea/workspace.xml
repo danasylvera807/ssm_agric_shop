@@ -1,98 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="shop:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/ReviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/UserIdentity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/PaymentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ReviewMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/TestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/TestPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/PaymentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ReviewServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/TestServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/utils/LocalDateTimeTypeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/utils/TimeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/utils/VerificationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PaymentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ReviewMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TestMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/carrot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daikon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/orange.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/peach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/pineapple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tomato.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/db/DBTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/enums/OrderStatusTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/ProductServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/TestServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/UserServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/group3/utils/TimeUtilsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/group3/utils/VerifyHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/details.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/js.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/layui/layui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/418f6fcd-4132-4987-81ce-3128f79e51bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/418f6fcd-4132-4987-81ce-3128f79e51bd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/enums/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/PaymentMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/enums/UserIdentity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/UserIdentity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CartMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CartMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/PaymentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/PaymentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/ReviewMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/ReviewServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/utils/LocalDateTimeTypeHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/utils/VerificationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CartMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PaymentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PaymentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ReviewMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ReviewMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/apple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/carrot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/daikon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/orange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/peach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/pineapple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/tomato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/db/DBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/db/DBTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/ProductServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/ProductServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/utils/TimeUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/utils/TimeUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,17 +122,25 @@
       <list>
         <option value="Enum" />
         <option value="Kotlin Class" />
-        <option value="Jsp File" />
         <option value="XML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Mapper XML" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -148,12 +171,12 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Javaspace/Java主流框架学习/shop/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Javaspace/Java主流框架学习/shop/src/main/webapp/img&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.09208103&quot;,
     &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;8a28e66c5cbe16651b09e70bc9154d08&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -164,20 +187,29 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\img" />
+      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\static" />
+      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\resources" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\static" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.group3.service.impl" />
       <recent name="com.group3.enums" />
       <recent name="com.group3.utils" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.group3.utils" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceImplTest.getOrdersByStatus">
-    <configuration name="OrderServiceImplTest.getOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat for agric_shop">
+    <configuration name="OrderServiceImplTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -187,29 +219,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="getOrderById" />
+      <option name="METHOD_NAME" value="addOrder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceImplTest.getOrdersByStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.group3.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="getOrdersByStatus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductServiceImplTest.getProductsByCategoryId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceImplTest.addProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -219,51 +235,167 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="getProductsByCategoryId" />
+      <option name="METHOD_NAME" value="addProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeUtilsTest.stringToTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceImplTest.getProductByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.group3.utils.*" />
+          <option name="PATTERN" value="com.group3.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.group3.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.utils.TimeUtilsTest" />
-      <option name="METHOD_NAME" value="stringToTime" />
+      <option name="PACKAGE_NAME" value="com.group3.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.ProductServiceImplTest" />
+      <option name="METHOD_NAME" value="getProductByPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeUtilsTest.timeToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceImplTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.group3.utils.*" />
+          <option name="PATTERN" value="com.group3.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.group3.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.utils.TimeUtilsTest" />
-      <option name="METHOD_NAME" value="timeToString" />
+      <option name="PACKAGE_NAME" value="com.group3.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceImplTest.getByUserEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group3.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.group3.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="getByUserEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat for agric_shop" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.68" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 " />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="shop:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/agricshop" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="1d548746-cd8a-4e44-b226-3a4fc9658502" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="38016" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="shop:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserServiceImplTest.add" />
+      <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
+      <item itemvalue="JUnit.ProductServiceImplTest.addProduct" />
+      <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
+      <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
+      <item itemvalue="Tomcat Server.Tomcat for agric_shop" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderServiceImplTest.getOrdersByStatus" />
-        <item itemvalue="JUnit.TimeUtilsTest.stringToTime" />
-        <item itemvalue="JUnit.TimeUtilsTest.timeToString" />
-        <item itemvalue="JUnit.OrderServiceImplTest.getOrderById" />
-        <item itemvalue="JUnit.ProductServiceImplTest.getProductsByCategoryId" />
+        <item itemvalue="JUnit.UserServiceImplTest.add" />
+        <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
+        <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
+        <item itemvalue="JUnit.ProductServiceImplTest.addProduct" />
+        <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +410,22 @@
       <workItem from="1705282044491" duration="24142000" />
       <workItem from="1705324216678" duration="2874000" />
       <workItem from="1705327314114" duration="5694000" />
-      <workItem from="1705365148545" duration="26802000" />
+      <workItem from="1705365148545" duration="28259000" />
+      <workItem from="1705453899720" duration="23412000" />
+      <workItem from="1705494570215" duration="12745000" />
+      <workItem from="1705538076849" duration="1738000" />
+      <workItem from="1705557001685" duration="174000" />
+      <workItem from="1705558898265" duration="8549000" />
+      <workItem from="1705628639633" duration="234000" />
+      <workItem from="1705643474764" duration="10304000" />
+      <workItem from="1705657791099" duration="9286000" />
+      <workItem from="1705715873899" duration="8996000" />
+      <workItem from="1705772006376" duration="13219000" />
+      <workItem from="1705799646787" duration="39808000" />
+      <workItem from="1705883589818" duration="25765000" />
+      <workItem from="1705976997242" duration="6752000" />
+      <workItem from="1705989286158" duration="12647000" />
+      <workItem from="1706012376377" duration="14199000" />
     </task>
     <servers />
   </component>

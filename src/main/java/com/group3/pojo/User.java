@@ -1,5 +1,6 @@
 package com.group3.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.group3.enums.UserIdentity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +17,7 @@ public class User {
     private String userEmail;
     private String phoneNumber;
     private String userAddress;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime registrationTime;
     private UserIdentity userIdentity;
 }

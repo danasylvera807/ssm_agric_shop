@@ -3,5 +3,48 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.group3.mapper.PaymentMapper">
+    <resultMap id="paymentResultMap" type="com.group3.pojo.Payment">
+        <id property="paymentId" column="payment_id"/>
+        <result property="paymentTime" column="payment_time"/>
+        <result property="paymentTotalAmount" column="payment_total_amount"/>
+        <result property="paymentMethod" column="payment_method"/>
+        <association property="paymentOrder" javaType="com.group3.pojo.Order" resultMap="com.group3.mapper.OrderMapper.orderResultMap">
+            <id property="orderId" column="order_id"/>
+        </association>
+    </resultMap>
+    <!-- 根据支付ID查询支付信息 -->
+    <select id="getPaymentById" parameterType="int" resultMap="paymentResultMap">
+        SELECT * FROM payment
+        JOIN `order` o on o.order_id = payment.order_id
+        WHERE payment_id = #{paymentId}
+    </select>
 
+    <!-- 查询所有支付信息 -->
+    <select id="getAllPayments" resultMap="paymentResultMap">
+        SELECT * FROM payment
+        JOIN `order` o on o.order_id = payment.order_id
+    </select>
+
+    <!-- 添加新支付信息 -->
+    <insert id="addPayment" parameterType="Payment">
+        INSERT INTO payment (order_id, payment_time, payment_total_amount, payment_method)
+        VALUES (#{paymentOrder.orderId}, #{paymentTime}, #{paymentTotalAmount}, #{paymentMethod})
+    </insert>
+
+    <!-- 更新支付信息 -->
+    <update id="updatePayment" parameterType="Payment">
+        UPDATE payment
+        SET
+            order_id = #{paymentOrder.orderId},
+            payment_time = #{paymentTime},
+            payment_total_amount = #{paymentTotalAmount},
+            payment_method = #{paymentMethod}
+        WHERE payment_id = #{paymentId}
+    </update>
+
+    <!-- 删除支付信息 -->
+    <delete id="deletePayment" parameterType="int">
+        DELETE FROM payment
+        WHERE payment_id = #{paymentId}
+    </delete>
 </mapper>

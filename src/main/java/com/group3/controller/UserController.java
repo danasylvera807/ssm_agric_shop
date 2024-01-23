@@ -1,33 +1,92 @@
 package com.group3.controller;
 
+import com.group3.service.UserService;
+import com.group3.utils.VerifyHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class UserController {
-    @GetMapping("login")
-    public String login(){
-        return "login";
+    private final UserService userService;
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
-    @PostMapping("loginAction")
-    public String loginAction(){
+    @GetMapping("login")
+    public String login(){
+        return "user/login";
+    }
 
-        return "customer/main";
+    @PostMapping(value = "loginByPwd", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String loginByPwd(@RequestParam String userName,
+                             @RequestParam String userPwd,
+                             @RequestParam String captchaCode,
+                             Model model
+                             ){
+        if(!userService.pwdLogin(userName,userPwd)){
+            return "user error";//用户名或密码错误
+        }else if(!(captchaCode.equals(VerifyHelper.getCode()))){
+            return "code error";//验证码错误
+        }else {
+            return userService.getByUserName(userName).getUserIdentity().getIdentity();
+        }
     }
 
     @GetMapping("register")
     public String register(){
-        return "login";
+        return "user/register";
     }
 
-    @PostMapping("registerAction")
-    public String registerAction(){
+    @PostMapping(value = "registerAction", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String registerAction(@RequestParam String userName,
+                                 @RequestParam String userPwd
+                                 ){
+        int res = userService.register(userName, userPwd);
+        if(res > 0){
+            return "success";
+        }else if(res == 0){
+            return "fail";
+        }else{
+            return "repeat";
+        }
 
-        return "login";
     }
 
 
+    @RequestMapping(value = "/captcha", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]> generateCaptcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ResponseEntity<byte[]> response1 = VerifyHelper.graphVerify(request,response);
+        System.out.println(VerifyHelper.getCode());
+        return response1;
+    }
+    @GetMapping("shop")
+    public String shop(@RequestParam String userName,Model model){
+        model.addAttribute("user",userService.getByUserName(userName));
+        return "main/customer";
+    }
+    @GetMapping("manage")
+    public String manage(@RequestParam String userName,Model model){
+        model.addAttribute("user",userService.getByUserName(userName));
+        return "main/admin";
+    }
+    @GetMapping("pwdLogin")
+    public String pwdLogin(){
+        return "user/verifyByPwd";
+    }
+    @GetMapping("msgLogin")
+    public String msgLogin(){
+        return "user/verifyByPhone";
+    }
 
 }

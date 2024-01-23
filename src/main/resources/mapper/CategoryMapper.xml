@@ -9,6 +9,34 @@
         <!-- 普通属性映射 -->
         <result property="categoryName" column="category_name" jdbcType="VARCHAR"/>
     </resultMap>
+    <!-- 根据分类ID查询分类 -->
+    <select id="getCategoryById" parameterType="int" resultMap="categoryResultMap">
+        SELECT * FROM category
+        WHERE category_id = #{categoryId}
+    </select>
 
+    <!-- 查询所有分类 -->
+    <select id="getAllCategories" resultMap="categoryResultMap">
+        SELECT * FROM category
+    </select>
+
+    <!-- 添加新分类 -->
+    <insert id="addCategory" parameterType="Category">
+        INSERT INTO category (category_name)
+        VALUES (#{categoryName})
+    </insert>
+
+    <!-- 更新分类信息 -->
+    <update id="updateCategory" parameterType="Category">
+        UPDATE category
+        SET category_name = #{categoryName}
+        WHERE category_id = #{categoryId}
+    </update>
+
+    <!-- 删除分类 -->
+    <delete id="deleteCategory" parameterType="int">
+        DELETE FROM category
+        WHERE category_id = #{categoryId}
+    </delete>
 
 </mapper>

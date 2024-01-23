@@ -8,7 +8,7 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 配置整合mybatis -->
     <!-- 1.关联数据库文件 -->
-    <context:property-placeholder location="classpath:database.properties"/>
+    <context:property-placeholder location="classpath:application.properties"/>
     <!-- 2.数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <!-- 配置连接池属性 -->

@@ -140,6 +140,39 @@
       <artifactId>logback-classic</artifactId>
       <version>1.2.6</version> <!-- 使用最新版本 -->
     </dependency>
+
+    <!--图形验证-->
+    <dependency>
+      <groupId>com.github.penggle</groupId>
+      <artifactId>kaptcha</artifactId>
+      <version>2.3.2</version>
+    </dependency>
+
+    <!--短信验证-->
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>4.5.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.aliyun.oss</groupId>
+      <artifactId>aliyun-sdk-oss</artifactId>
+      <version>3.17.2</version> <!-- 使用最新版本 -->
+    </dependency>
+    <dependency>
+      <!--确保项目中包含 Jackson 对 Java 8 日期/时间类型的支持模块-->
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>2.11.0</version> <!-- 使用适合你项目的版本 -->
+    </dependency>
+
   </dependencies>
 
   <build>

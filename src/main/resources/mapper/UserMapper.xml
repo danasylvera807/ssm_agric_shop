@@ -59,6 +59,7 @@
         SELECT *
         FROM user
         WHERE user_email = #{userEmail}
+        LIMIT 1;
     </select>
 
     <!--根据用户名查询用户-->
@@ -66,6 +67,7 @@
         SELECT *
         FROM user
         WHERE user_name = #{userName}
+        LIMIT 1;
     </select>
 
     <!--根据手机号查询用户-->
@@ -73,6 +75,7 @@
         SELECT *
         FROM user
         WHERE phone_number = #{phoneNumber}
+        LIMIT 1;
     </select>
 
 

@@ -2,7 +2,6 @@ package com.group3.enums;
 
 public enum UserIdentity {
     CUSTOMER("顾客"),
-    SELLER("卖家"),
     ADMIN("管理员");
 
     private final String identity;

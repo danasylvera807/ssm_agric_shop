@@ -1,14 +1,11 @@
 package com.group3.service.impl;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
-import com.group3.enums.OrderStatus;
+import com.group3.enums.OrderState;
 import com.group3.pojo.Order;
+import com.group3.pojo.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import static org.junit.Assert.*;
 
 public class OrderServiceImplTest {
     ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -21,27 +18,44 @@ public class OrderServiceImplTest {
 
     @Test
     public void getOrdersByUserId() {
+        System.out.println(orderService.getOrdersByUserId(1,1,3));
     }
 
     @Test
     public void getAllOrders() {
+
     }
     @Test
     public void getOrdersByStatus() {
-        PageInfo<Order> pageInfo = orderService.getOrdersByStatus(OrderStatus.PENDING_PAYMENT,1,2);
-        System.out.println(pageInfo);
+        System.out.println(orderService.getOrdersByStatus(OrderState.COMPLETED,1,1));
     }
 
 
     @Test
     public void addOrder() {
+        Order order = new Order();
+        User user = new User();
+        user.setUserId(1);
+        order.setOrderUser(user);
+        orderService.addOrder(order);
+
     }
 
     @Test
     public void updateOrder() {
+        orderService.updateOrderAddr(1,"测试地址");
+        orderService.updateOrderState(1,OrderState.CANCELED);
     }
 
     @Test
     public void deleteOrder() {
+        String s = "CANCELED";
+        try{
+            OrderState orderState = Enum.valueOf(OrderState.class,s);
+            System.out.println(orderState.getStatus());
+        }catch (Exception e){
+            System.out.println("match fail");
+            e.printStackTrace();
+        }
     }
 }

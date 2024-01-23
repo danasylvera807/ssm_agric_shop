@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/ssm_agric_shop</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ssm_agirc_shop@47.98.164.48" uuid="103bf4a0-5788-4ef8-9319-fb053a5e2bff">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://47.98.164.48:3306/ssm_agric_shop</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

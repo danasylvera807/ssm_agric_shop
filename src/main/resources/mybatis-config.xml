@@ -28,7 +28,6 @@
         <mapper resource="mapper/ProductMapper.xml"/>
         <mapper resource="mapper/ReviewMapper.xml"/>
         <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/TestMapper.xml"/>
     </mappers>
 
 </configuration>

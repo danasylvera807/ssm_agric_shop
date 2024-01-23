@@ -3,5 +3,38 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.group3.mapper.ReviewMapper">
-
+    <resultMap id="reviewResultMap" type="com.group3.pojo.Review">
+        <!-- 数据库列名与实体属性的映射关系 -->
+        <id property="reviewId" column="review_id"/>
+        <result property="reviewContent" column="content"/>
+        <result property="reviewTime" column="review_time"/>
+        <result property="reviewRating" column="rating"/>
+        <!-- 外键关联的实体映射 -->
+        <association property="reviewUser" javaType="User" resultMap="com.group3.mapper.UserMapper.userResultMap">
+            <id property="userId" column="user_id"/>
+        </association>
+        <association property="reviewProduct" javaType="Product" resultMap="com.group3.mapper.ProductMapper.productResultMap">
+            <id property="productId" column="product_id"/>
+        </association>
+    </resultMap>
+    <!-- 查询所有评价信息 -->
+    <select id="getAllReviews" resultMap="reviewResultMap">
+        SELECT * FROM review
+    </select>
+    <!-- 根据 product_id 查询评论列表 -->
+    <select id="getReviewsByProductId" parameterType="int" resultMap="reviewResultMap">
+        SELECT r.*,u.user_id,u.user_name FROM review r
+        JOIN user u on u.user_id = r.user_id
+        WHERE product_id = #{productId}
+    </select>
+    <!-- 添加新评价信息 -->
+    <insert id="addReview" parameterType="com.group3.pojo.Review">
+        INSERT INTO review (user_id, product_id, content, review_time, rating)
+        VALUES (#{reviewUser.userId}, #{reviewProduct.productId}, #{reviewContent}, #{reviewTime}, #{reviewRating})
+    </insert>
+    <!-- 删除评论信息 -->
+    <delete id="deleteReview" parameterType="int">
+        DELETE FROM review
+        WHERE review_id = #{reviewId}
+    </delete>
 </mapper>

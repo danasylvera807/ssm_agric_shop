@@ -14,11 +14,9 @@ public class UserServiceImplTest {
 
     @Test
     public void add() {
-        User user = new User();
-        user.setUserName("addCustomer");
-        user.setUserPwd("123");
-        user.setUserIdentity(UserIdentity.CUSTOMER);
-        System.out.println(userService.add(user));
+        String name = "sk";
+        String pwd = "123";
+        System.out.println(userService.register(name,pwd));
     }
 
     @Test
@@ -32,7 +30,7 @@ public class UserServiceImplTest {
         user.setUserId(4);
         user.setUserName("seller1");
         user.setUserPwd("123456");
-        user.setUserIdentity(UserIdentity.SELLER);
+        user.setUserIdentity(UserIdentity.CUSTOMER);
         System.out.println(userService.update(user));
     }
 
@@ -42,8 +40,7 @@ public class UserServiceImplTest {
 
     @Test
     public void getByUserEmail() {
-        String email = "308465@gmail.com";
-        System.out.println(userService.getByUserEmail(email));
+        System.out.println(userService.pwdLogin("addCustomer1","123"));
     }
 
     @Test

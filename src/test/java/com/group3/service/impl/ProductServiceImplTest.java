@@ -18,21 +18,17 @@ public class ProductServiceImplTest {
     Product product = new Product();
     @Test
     public void getProductByPage() {
-
+        System.out.println(productService.getAllProducts(1,10));
     }
 
     @Test
     public void getProductByName() {
-        System.out.println(productService.getProductByName("苹果", 1, 2));
+        System.out.println(productService.getProductsByName("苹果", 1, 2));
     }
 
     @Test
     public void getProductsByCategoryId() {
-        pageInfo = productService.getProductsByCategoryId(1,2,10);
-        for (Product p :
-                pageInfo.getList()) {
-            System.out.println(p);
-        }
+        Map<String,Object> map = productService.getProductsByCategoryId(1,2,10);
     }
 
     @Test
