@@ -97,16 +97,16 @@
                     limitName: 'pageSize'
                 },
                 cols: [[
-                    {field: 'productName', title: '商品名称', width: 150,sort: true},
-                    {field: 'productPrice', title: '价格(元/斤)', width: 100,sort: true},
-                    {field: 'productStock', title: '库存(斤)', width: 100,sort: true},
-                    {field: 'productImageUrl', title: '图片', templet: function (d) {
-                            return '<img class="product-image" width=20px height=20px src="<%=imgPath%>/'+d.productImageUrl+'" alt="Product Image">';
+                    {field: 'productName', title: '商品名称', width: '10%',sort: true},
+                    {field: 'productPrice', title: '价格(元/斤)', width: '10%',sort: true},
+                    {field: 'productStock', title: '库存(斤)', width: '10%',sort: true},
+                    {field: 'productImageUrl', title: '图片',width: '10%', templet: function (d) {
+                            return '<img class="product-image" width=30px height=30px src="<%=imgPath%>/'+d.productImageUrl+'" alt="Product Image">';
                         }},
-                    {field: 'productOrigin', title: '原产地', width: 100},
-                    {field: 'productDescription', title: '描述', width: 100},
-                    {field: 'productProductionDate', title: '上架日期', width: 100,sort: true},
-                    {field: 'operation', title: '操作', width: 150, toolbar: '#barDemo'}
+                    {field: 'productOrigin', title: '原产地', width: '10%'},
+                    {field: 'productDescription', title: '描述', width: '10%'},
+                    {field: 'productProductionDate', title: '上架日期', width: '20%',sort: true},
+                    {field: 'operation', title: '操作', width: '20%', toolbar: '#barDemo'}
                 ]],
                 done: function (res, curr, count) {
                     // 表格渲染完成后执行事件绑定

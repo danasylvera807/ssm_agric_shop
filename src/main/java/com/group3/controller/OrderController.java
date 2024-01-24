@@ -15,13 +15,12 @@ public class OrderController {
     }
 
     @GetMapping("admin/order")
-    public String order(){
+    public String adminOrder(){
         return "order/listToAdmin";
     }
-    @GetMapping("test/orderByState")
-    @ResponseBody
-    public String getOrderByState(){
-
-        return "";
+    @GetMapping("customer/order")
+    public String customerOrder(){
+        return "order/listToCustomer";
     }
+
 }
