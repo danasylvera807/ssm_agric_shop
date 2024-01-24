@@ -55,7 +55,14 @@
 </form>
 
 <script>
-    function saveUserInfo() {
+
+    var storedUserInfo = sessionStorage.getItem('userInfo');
+    var userName = JSON.parse(storedUserInfo).userName;
+    if(userName!=null){
+        window.location.href='<%=path%>/shop.do?userName='+userName;
+    }
+
+    function saveUserId() {
         layui.use(function(){
             var $ = layui.jquery;
             var username = $('#userNameInput').val();
@@ -66,15 +73,14 @@
                 success: function (response) {
                     var userInfo = { /* 用户信息对象 */ };
                     sessionStorage.setItem('userInfo', JSON.stringify(response));
-                },
+                    sessionStorage.setItem('userLoggedIn', 'true');
+                    },
                 error: function (error) {
                     // 请求失败时的处理
                     console.error("请求失败", error);
                 }
             });
         })
-
-        var name = $
     }
     layui.use(['layer','form'], function(){
         var $ = layui.jquery;
@@ -89,7 +95,7 @@
             // 使用 Ajax 提交表单数据
             console.log('Ajax请求');
             $.ajax({
-                url: "<%=path%>/loginByPwd.do",  // 替换成你的后端接口地址
+                url: "<%=path%>/loginByPwd.do",  //后端接口地址
                 type: "POST",
                 data: data.field,
                 success: function (response) {
