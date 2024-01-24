@@ -118,7 +118,7 @@
                         console.log('查看详情');
                         layer.open({
                             type: 2,//iframe
-                            title: '更新农产品',
+                            title: '商品详情',
                             area: ['600px','600px'],
                             closeBtn: 2,
                             content: '<%=path%>/product/toDetails.do?productId='+data.productId,
@@ -126,8 +126,27 @@
 
                     } else if (layEvent === 'addCart') {
                         // 执行加入购物车操作
+                        var productId = data.productId;
+                        //取出用户信息
+                        var storedUserInfo = sessionStorage.getItem('userInfo');
+                        var userInfoObject = JSON.parse(storedUserInfo);
+                        //获得用户id
+                        var userId = userInfoObject.userId;
+                        // console.log(productId);
+                        // console.log(userId);
+                        $.ajax({
+                            url: '<%=path%>/cart/add.do?productId='+productId+'&userId='+userId,
+                            type: 'Get',
+                            success: function (response) {
+                                layer.msg(response);
+                                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(index); //再执行关闭
+                            },
+                            error: function (error) {
+                                console.error('失败：', error);
+                            }
+                        });
                         console.log('加入购物车');
-
                     }
                 });
             }

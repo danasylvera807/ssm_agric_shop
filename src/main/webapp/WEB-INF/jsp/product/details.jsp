@@ -22,11 +22,6 @@
 <body>
 <div class="layui-container" style="margin-top: 20px;">
     <div class="layui-form-item">
-        <div class="layui-input-block">
-            <input hidden id="productId" type="text" name="productId" readonly  lay-verify="readonly" value="${product.productId}" autocomplete="off" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
         <label class="layui-form-label">名称</label>
         <div class="layui-input-block">
             <input id="productName" type="text" name="productName" readonly  lay-verify="readonly" value="${product.productName}" autocomplete="off" class="layui-input">
@@ -83,18 +78,36 @@
 </div>
 
 <script>
-    console.log(${product.productProductionDate})
     //Demo
-    layui.use(['form','layer','jquery'], function(){
-        var form = layui.form;
+    layui.use(['layer','jquery'], function(){
         var layer = layui.layer;
         var $ = layui.jquery;
-        var product
+
         $('#addCartBtn').on('click',function () {
-            console.log('adCart');
+            var productId = ${product.productId};
+            //取出用户信息
+            var storedUserInfo = sessionStorage.getItem('userInfo');
+            var userInfoObject = JSON.parse(storedUserInfo);
+            //获得用户id
+            var userId = userInfoObject.userId;
+            // console.log('productId:'+productId);
+            $.ajax({
+                url: '<%=path%>/cart/add.do?productId='+productId+'&userId='+userId,
+                type: 'Get',
+                success: function (response) {
+                    layer.msg(response);
+                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                    parent.layer.close(index); //再执行关闭
+                },
+                error: function (error) {
+                    console.error('失败：', error);
+                }
+            });
         })
         $('#backBtn').on('click',function () {
-            console.log('adCart');
+            var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+            parent.layer.close(index); //再执行关闭
+            console.log('back');
         })
     });
 </script>

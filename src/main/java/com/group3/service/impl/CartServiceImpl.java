@@ -2,7 +2,9 @@ package com.group3.service.impl;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
 import com.group3.mapper.CartMapper;
+import com.group3.mapper.ProductMapper;
 import com.group3.pojo.Cart;
+import com.group3.pojo.Product;
 import com.group3.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,23 +15,30 @@ import java.util.List;
 
 @Service
 public class CartServiceImpl implements CartService {
-
     private final CartMapper cartMapper;
-
+    private final ProductMapper productMapper;
     @Autowired
-    public CartServiceImpl(CartMapper cartMapper) {
+    public CartServiceImpl(CartMapper cartMapper, ProductMapper productMapper) {
         this.cartMapper = cartMapper;
+        this.productMapper = productMapper;
     }
 
     /**
      * 加入购物车，商品数量默认为1
+     *
      * @param userId
      * @param productId
      * @return
      */
     @Override
-    public boolean addProductToCart(int userId, int productId) {
-        return cartMapper.addProductToCart(userId, productId, 1, LocalDateTimeUtil.now())>0;
+    public int addProductToCart(int userId, int productId) {
+        Product product = productMapper.getProductById(productId);
+        int stock = product.getProductStock();
+        if(stock > 0){
+            return cartMapper.addProductToCart(userId, productId, 1, LocalDateTimeUtil.now());
+        }else{//库存不足
+            return -1;
+        }
     }
 
     @Override

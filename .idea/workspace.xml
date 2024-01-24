@@ -9,26 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="登录注册功能完成，农产品的管理功能完成">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/category/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/category/update.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" afterDir="false" />
+    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="购物车列表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +334,7 @@
       <workItem from="1705976997242" duration="6752000" />
       <workItem from="1705989286158" duration="12647000" />
       <workItem from="1706012376377" duration="14982000" />
-      <workItem from="1706056628364" duration="12570000" />
+      <workItem from="1706056628364" duration="18792000" />
     </task>
     <task id="LOCAL-00001" summary="登录注册功能完成，农产品的管理功能完成">
       <created>1706026713473</created>
@@ -356,7 +343,49 @@
       <option name="project" value="LOCAL" />
       <updated>1706026713473</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="购物车功能">
+      <created>1706071370325</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071370325</updated>
+    </task>
+    <task id="LOCAL-00003" summary="订单功能">
+      <created>1706071421654</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071421654</updated>
+    </task>
+    <task id="LOCAL-00004" summary="分类功能">
+      <created>1706071471288</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071471288</updated>
+    </task>
+    <task id="LOCAL-00005" summary="商品功能">
+      <created>1706071529457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071529457</updated>
+    </task>
+    <task id="LOCAL-00006" summary="用户功能">
+      <created>1706071556164</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071556164</updated>
+    </task>
+    <task id="LOCAL-00007" summary="购物车列表">
+      <created>1706071575615</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706071575616</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +396,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -375,7 +431,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="登录注册功能完成，农产品的管理功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录注册功能完成，农产品的管理功能完成" />
+    <MESSAGE value="购物车功能" />
+    <MESSAGE value="订单功能" />
+    <MESSAGE value="分类功能" />
+    <MESSAGE value="商品功能" />
+    <MESSAGE value="用户功能" />
+    <MESSAGE value="购物车列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="购物车列表" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
