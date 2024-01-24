@@ -2,7 +2,6 @@ package com.group3.service;
 
 import com.group3.enums.OrderState;
 import com.group3.pojo.Order;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
 
@@ -21,8 +20,8 @@ public interface OrderService {
     Order getOrderByNumber(String orderNumber);
 
     // 添加订单
-    boolean addOrder(Order order);
-
+    Order createOrder(Integer userId);
+    int addOrder(Order order);
     // 更新订单信息
     boolean updateOrderAddr(int orderId, String addr);
     boolean updateOrderState(int orderId, OrderState orderState);

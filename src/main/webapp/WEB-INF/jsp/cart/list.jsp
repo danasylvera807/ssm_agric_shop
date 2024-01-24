@@ -28,15 +28,6 @@
             align-items: center;
         }
 
-        #navbar {
-            display: flex;
-            list-style: none;
-        }
-
-        #navbar li {
-            margin-right: 10px;
-        }
-
         #refreshBtn {
             margin-left: 10px;
         }
@@ -49,7 +40,11 @@
             <h2>购物车列表</h2>
         </div>
     </div>
-    <button id="refreshBtn" class="layui-btn">刷新</button>
+    <span>
+        <button id="countBtn" class="layui-btn">结算</button>
+        <button id="refreshBtn" class="layui-btn">刷新</button>
+    </span>
+
 </div>
 
 <div class="product-table">
@@ -65,8 +60,7 @@
 <script type="text/javascript">
     var storedUserInfo = sessionStorage.getItem('userInfo');
     var userInfoObject = JSON.parse(storedUserInfo);
-    console.log(JSON.stringify(userInfoObject));
-    console.log('userId:'+userInfoObject.userId);
+    var userId = userInfoObject.userId;
     // 初始化 Layui
     layui.use(['table','layer'], function(){
         var table_cart = layui.table;
@@ -146,6 +140,20 @@
         $('#refreshBtn').on('click', function () {
             table_cart.reload("cartTable");
         });
+        $('#countBtn').on('click', function () {
+            layer.open({
+                type: 2,//iframe
+                title: '订单结算',
+                area: ['600px','600px'],
+                closeBtn: 2,
+                content: '<%=path%>/order/create.do?userId='+userId,
+                end: function(){
+                    table_cart.reload("cartTable");
+                }
+            });
+            console.log('结算');
+        });
+
     });
 </script>
 

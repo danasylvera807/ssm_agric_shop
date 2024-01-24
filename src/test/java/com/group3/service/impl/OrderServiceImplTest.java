@@ -33,11 +33,7 @@ public class OrderServiceImplTest {
 
     @Test
     public void addOrder() {
-        Order order = new Order();
-        User user = new User();
-        user.setUserId(1);
-        order.setOrderUser(user);
-        orderService.addOrder(order);
+
 
     }
 

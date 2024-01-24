@@ -9,13 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="购物车列表">
+    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="禁止多个用户在同一浏览器登录">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +119,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat for agric_shop">
-    <configuration name="OrderServiceImplTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceImplTest.getCartById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -126,14 +128,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="addOrder" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.CartServiceImplTest" />
+      <option name="METHOD_NAME" value="getCartById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.addProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceImplTest.removeProductFromCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -142,14 +144,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="addProduct" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.CartServiceImplTest" />
+      <option name="METHOD_NAME" value="removeProductFromCart" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.getProductByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceImplTest.updateCartItemQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -158,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="getProductByPage" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.CartServiceImplTest" />
+      <option name="METHOD_NAME" value="updateCartItemQuantity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -290,20 +292,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CartServiceImplTest.getCartById" />
+      <item itemvalue="JUnit.CartServiceImplTest.removeProductFromCart" />
+      <item itemvalue="JUnit.CartServiceImplTest.updateCartItemQuantity" />
       <item itemvalue="JUnit.UserServiceImplTest.add" />
       <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
-      <item itemvalue="JUnit.ProductServiceImplTest.addProduct" />
-      <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
-      <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
       <item itemvalue="Tomcat Server.Tomcat for agric_shop" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CartServiceImplTest.removeProductFromCart" />
+        <item itemvalue="JUnit.CartServiceImplTest.updateCartItemQuantity" />
+        <item itemvalue="JUnit.CartServiceImplTest.getCartById" />
         <item itemvalue="JUnit.UserServiceImplTest.add" />
         <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
-        <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
-        <item itemvalue="JUnit.ProductServiceImplTest.addProduct" />
-        <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +336,9 @@
       <workItem from="1705976997242" duration="6752000" />
       <workItem from="1705989286158" duration="12647000" />
       <workItem from="1706012376377" duration="14982000" />
-      <workItem from="1706056628364" duration="18792000" />
+      <workItem from="1706056628364" duration="27663000" />
+      <workItem from="1706088351417" duration="49000" />
+      <workItem from="1706095081624" duration="17565000" />
     </task>
     <task id="LOCAL-00001" summary="登录注册功能完成，农产品的管理功能完成">
       <created>1706026713473</created>
@@ -385,7 +389,28 @@
       <option name="project" value="LOCAL" />
       <updated>1706071575616</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="加入购物车功能完成">
+      <created>1706079765755</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706079765755</updated>
+    </task>
+    <task id="LOCAL-00009" summary="购物车功能完成">
+      <created>1706106654847</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706106654847</updated>
+    </task>
+    <task id="LOCAL-00010" summary="禁止多个用户在同一浏览器登录">
+      <created>1706106696051</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706106696051</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +462,10 @@
     <MESSAGE value="商品功能" />
     <MESSAGE value="用户功能" />
     <MESSAGE value="购物车列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="购物车列表" />
+    <MESSAGE value="加入购物车功能完成" />
+    <MESSAGE value="购物车功能完成" />
+    <MESSAGE value="禁止多个用户在同一浏览器登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="禁止多个用户在同一浏览器登录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
