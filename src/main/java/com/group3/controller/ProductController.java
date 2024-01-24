@@ -22,16 +22,14 @@ public class ProductController {
         this.categoryService = categoryService;
         this.productService = productService;
     }
-    @RequestMapping("manage")
-    public String productManage(Model model){
-        model.addAttribute("categoryList",categoryService.getAllCategories());
-
-        return "listToAdmin";
-    }
     @GetMapping("admin/product")
     public String productForAdmin(Model model){
         model.addAttribute("categoryList",categoryService.getAllCategories());
         return"product/listToAdmin";
+    }@GetMapping("customer/product")
+    public String productForCustomer(Model model){
+        model.addAttribute("categoryList",categoryService.getAllCategories());
+        return"product/listToCustomer";
     }
     @GetMapping("getProductsByCategoryId")
     @ResponseBody
@@ -158,7 +156,12 @@ public class ProductController {
         }
 
     }
-
+    @GetMapping("product/toDetails")
+    public String details(@RequestParam Integer productId,Model model){
+        model.addAttribute("product",productService.getProductById(productId));
+        model.addAttribute("categoryName",categoryService.getCategoryById(productService.getProductById(productId).getCategoryId()).getCategoryName());
+        return "product/details";
+    }
 
 
 
