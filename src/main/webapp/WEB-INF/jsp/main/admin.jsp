@@ -108,6 +108,7 @@
                 <a href="#" class="dropdown-item">分类管理</a>
                 <a onclick="getOrdersToAdmin()" class="dropdown-item">订单管理</a>
                 <a href="#" class="dropdown-item">可视化管理</a>
+                <a href="#" class="dropdown-item">退出登录</a>
             </div>
         </div>
     </div>
@@ -119,6 +120,8 @@
 
 <script>
     var viewerPath;
+    if(${user})
+
     //加载主页面时默认加载农产品列表视图
     getProductsToAdmin();
 

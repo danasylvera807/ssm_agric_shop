@@ -55,7 +55,28 @@
 </form>
 
 <script>
-    layui.use(['layer','layer','form'], function(){
+    function saveUserInfo() {
+        layui.use(function(){
+            var $ = layui.jquery;
+            var username = $('#userNameInput').val();
+            $.ajax({
+                url: "<%=path%>/getUserByName.do",  // 替换成你的后端接口地址
+                type: "Get",
+                data: {userName: username},
+                success: function (response) {
+                    var userInfo = { /* 用户信息对象 */ };
+                    sessionStorage.setItem('userInfo', JSON.stringify(response));
+                },
+                error: function (error) {
+                    // 请求失败时的处理
+                    console.error("请求失败", error);
+                }
+            });
+        })
+
+        var name = $
+    }
+    layui.use(['layer','form'], function(){
         var $ = layui.jquery;
         var form = layui.form;
         var layer = layui.layer;
@@ -81,9 +102,12 @@
                         $('#myImage').src = '<%=path%>/captcha.do';
                     }else if(response == '顾客'){
                         layer.msg('登录成功');
+                        //保存用户名
+                        saveUserInfo();
                         window.location.href = "<%=path%>/shop.do?userName="+data.field.userName;
                     }else if(response == '管理员'){
                         layer.msg('登录成功');
+                        saveUserInfo();
                         window.location.href = "<%=path%>/manage.do?userName="+data.field.userName;
                     }else{
                         console.log(response);

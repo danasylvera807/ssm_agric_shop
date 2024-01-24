@@ -1,5 +1,6 @@
 package com.group3.controller;
 
+import com.group3.pojo.User;
 import com.group3.service.UserService;
 import com.group3.utils.VerifyHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,8 +71,12 @@ public class UserController {
         System.out.println(VerifyHelper.getCode());
         return response1;
     }
-    @GetMapping("shop")
-    public String shop(@RequestParam String userName,Model model){
+
+    @GetMapping("agricshop")
+    public String shopWithoutUser(Model model){
+        return "main/customer";
+    }@GetMapping("shop")
+    public String shopWithUser(@RequestParam String userName,Model model){
         model.addAttribute("user",userService.getByUserName(userName));
         return "main/customer";
     }
@@ -88,5 +93,9 @@ public class UserController {
     public String msgLogin(){
         return "user/verifyByPhone";
     }
-
+    @GetMapping("getUserByName")
+    @ResponseBody
+    public User getUserByName(@RequestParam String userName){
+        return userService.getByUserName(userName);
+    }
 }

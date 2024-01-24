@@ -16,8 +16,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.6.8/css/layui.css">
-
+    <link rel="stylesheet" href="<%=path%>/static/layui/css/layui.css">
+    <script src="<%=path%>/static/layui/layui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -88,6 +89,11 @@
         }
     </style>
     <title>农产品销售</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%=path%>/static/layui/css/layui.css">
+    <script src="<%=path%>/static/layui/layui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
@@ -99,15 +105,27 @@
             </div>
             <h2 align="center">农产品销售</h2>
         </div>
-        <div class="header-username">
-            <span>${user.userName}</span>
-            <div class="dropdown-menu">
-                <a id="personalInfo" href="#" class="dropdown-item">个人资料</a>
-                <a id="myOrder" href="#" class="dropdown-item">我的订单</a>
-                <a id="myCart" href="#" class="dropdown-item">购物车</a>
-                <a id="logout" href="#" class="dropdown-item">退出</a>
-            </div>
-        </div>
+        <c:choose>
+            <c:when test="${not empty user}">
+                <div class="header-username">
+                    <span>${user.userName}</span>
+                    <div class="dropdown-menu">
+                        <a onclick="getProductsToCustomer()" href="#" class="dropdown-item">首页</a>
+                        <a  href="#" class="dropdown-item">个人资料</a>
+                        <a onclick="getOrdersToCustomer()" href="#" class="dropdown-item">我的订单</a>
+                        <a  href="#" class="dropdown-item">购物车</a>
+                        <a  href="#" class="dropdown-item">退出</a>
+                    </div>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="header-username">
+                    <span onclick="window.location.href='<%=path%>/login.do'">
+                        请登录
+                    </span>
+                </div>
+            </c:otherwise>
+        </c:choose>
     </div>
 
     <!-- 主要内容 -->
@@ -117,28 +135,45 @@
 
 
 </div>
-<script src="https://cdn.staticfile.org/layui/2.6.8/layui.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <script>
-    layui.use('element', function(){
-        var element = layui.element;
+    var viewerPath;
+    //加载主页面时默认加载农产品列表视图
+    getProductsToCustomer();
 
-        // 使用 jQuery 发送 GET 请求
-        $.ajax({
-            url: '<%=path%>/admin/product.do',
-            type: 'GET',
-            success: function (response) {
-                // 请求成功，处理返回的数据
-                $('#shopContent').html(response);
-            },
-            error: function (error) {
-                // 请求失败时的处理
-                console.error('Error:', error);
-            }
+    function getProductsToCustomer() {
+        var contentId = $('#shopContent');
+        viewerPath = '<%=path%>/customer/product.do';
+        getViewer(viewerPath,contentId);
+    }
+    function getOrdersToCustomer() {
+        var contentId = $('#shopContent');
+        viewerPath = '<%=path%>/customer/order.do';
+        getViewer(viewerPath,contentId);
+    }
+
+
+    function getViewer(viewerPath,contentId) {
+        layui.use('element', function(){
+            var element = layui.element;
+
+            // 使用 jQuery 发送 GET 请求
+            $.ajax({
+                url: viewerPath,
+                type: 'GET',
+                success: function (response) {
+                    // 请求成功，处理返回的数据
+                    contentId.html(response);
+                },
+                error: function (error) {
+                    // 请求失败时的处理
+                    console.error('Error:', error);
+                }
+            });
         });
-    });
-</script>
+    }
 
+</script>
 </body>
 </html>
 
