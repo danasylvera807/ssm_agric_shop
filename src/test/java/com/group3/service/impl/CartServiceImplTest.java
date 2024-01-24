@@ -16,7 +16,7 @@ public class CartServiceImplTest {
 
     @Test
     public void addProductToCart() {
-        cartService.addProductToCart(1,1,3);
+        cartService.addProductToCart(1,1);
     }
 
     @Test

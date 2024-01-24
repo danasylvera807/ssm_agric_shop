@@ -4,7 +4,6 @@ import cn.hutool.core.date.LocalDateTimeUtil;
 import com.group3.mapper.CartMapper;
 import com.group3.pojo.Cart;
 import com.group3.service.CartService;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +21,19 @@ public class CartServiceImpl implements CartService {
         this.cartMapper = cartMapper;
     }
 
+    /**
+     * 加入购物车，商品数量默认为1
+     * @param userId
+     * @param productId
+     * @return
+     */
     @Override
-    public void addProductToCart(int userId, int productId, int quantity) {
-        cartMapper.addProductToCart(userId, productId, quantity, LocalDateTimeUtil.now());
+    public boolean addProductToCart(int userId, int productId) {
+        return cartMapper.addProductToCart(userId, productId, 1, LocalDateTimeUtil.now())>0;
     }
 
     @Override
-    public void updateCartItemQuantity(int userId, int productId, int quantity) {
+    public void updateCartItemQuantity(int userId, int productId,int quantity) {
         cartMapper.updateCartItemQuantity(userId, productId, quantity,LocalDateTimeUtil.now());
     }
 
