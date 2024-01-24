@@ -13,7 +13,7 @@
 %>
 <html>
 <head>
-    <title>农产品销售</title>
+    <title>购物车</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<%=path%>/static/layui/css/layui.css">
@@ -49,130 +49,104 @@
             <h2>购物车列表</h2>
         </div>
     </div>
+    <button id="refreshBtn" class="layui-btn">刷新</button>
 </div>
 
 <div class="product-table">
-    <table id="custProductTable" lay-filter="test" class="display" style="width:100%"></table>
+    <table id="cartTable" lay-filter="cart_filter" class="display" style="width:100%"></table>
 </div>
 
 <!-- 商品表格操作列的模板 -->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="details">查看详情</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="addCart">加入购物车</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="updateCart">修改数量</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="deleteCart">删除</a>
 </script>
 
 <script type="text/javascript">
+    var storedUserInfo = sessionStorage.getItem('userInfo');
+    var userInfoObject = JSON.parse(storedUserInfo);
+    console.log(JSON.stringify(userInfoObject));
+    console.log('userId:'+userInfoObject.userId);
     // 初始化 Layui
     layui.use(['table','layer'], function(){
-        var table_product = layui.table;
+        var table_cart = layui.table;
         var $ = layui.jquery;
         var layer = layui.layer;
-        // 全局变量，用于存储当前的 categoryId
-        var currentCategoryId = ${categoryList.get(0).categoryId};
+
         // 渲染表格
-        table_product.render({
-            elem: '#custProductTable',
-            url: '<%=path%>/getAllProducts.do',
+        table_cart.render({
+            elem: '#cartTable',
+            url: '<%=path%>/cart/list.do?userId='+userInfoObject.userId,
             method: 'get',
             page: true,
             limits: [5,10,15,20],
             limit: 5,
-            id: 'custProductTable',
-            layFilter: 'test',
+            id: 'cartTable',
+            layFilter: 'cart_filter',
             request: {
                 pageName: 'pageNum',
                 limitName: 'pageSize'
             },
             cols: [[
-                {field: 'productName', title: '商品名称', width: '10%',sort: true},
-                {field: 'productPrice', title: '价格(元/斤)', width: '10%',sort: true},
-                {field: 'productStock', title: '库存(斤)', width: '10%',sort: true},
-                {field: 'productImageUrl', title: '图片', width: '10%',templet: function (d) {
-                        return '<img class="product-image" width=30px height=30px src="<%=imgPath%>/'+d.productImageUrl+'" alt="Product Image">';
+                {field: 'cartProduct', title: '商品名称', width: '20%', sort: true, templet: function(d){
+                        return d.cartProduct ? d.cartProduct.productName : '';
                     }},
-                {field: 'productOrigin', title: '原产地', width: '10%'},
-                {field: 'productDescription', title: '描述', width: '10%'},
-                {field: 'productProductionDate', title: '上架日期', width: '20%',sort: true},
-                {field: 'operation', title: '操作', width: '20%', toolbar: '#barDemo'}
+                {field: 'cartProduct', title: '价格(元/斤)', width: '10%', sort: true, templet: function(d){
+                        return d.cartProduct ? d.cartProduct.productPrice : '';
+                    }},
+                {field: 'cartProduct', title: '库存(斤)', width: '10%', sort: true, templet: function(d){
+                        return d.cartProduct ? d.cartProduct.productStock : '';
+                    }},
+                {field: 'cartTime', title: '加入时间', width: '20%',sort: true},
+                {field: 'quantity', title: '数量', width: '10%',sort: true},
+                {field: 'operation', title: '操作', width: '30%', toolbar: '#barDemo'}
             ]],
             done: function (res, curr, count) {
                 // 表格渲染完成后执行事件绑定
-                table_product.on('tool(test)', function (obj) {
+                table_cart.on('tool(cart_filter)', function (obj) {
                     var data = obj.data; // 获取当前行数据
                     var layEvent = obj.event; // 获取 lay-event 对应的值
-                    if (layEvent === 'details') {
+                    if (layEvent === 'updateCart') {
                         // 执行查看详情操作
-                        console.log('查看详情');
                         layer.open({
                             type: 2,//iframe
                             title: '更新农产品',
                             area: ['600px','600px'],
                             closeBtn: 2,
-                            content: '<%=path%>/product/toDetails.do?productId='+data.productId,
+                            content: '<%=path%>/cart/toUpdate.do?cartId='+data.cartId,
+                            end: function(){
+                                table_cart.reload("cartTable");
+                            }
                         });
+                        console.log('修改数量');
 
-                    } else if (layEvent === 'addCart') {
+                    } else if (layEvent === 'deleteCart') {
                         // 执行加入购物车操作
-                        console.log('加入购物车');
-
+                        layer.confirm('确定删除该条数据吗？', function (index) {
+                            // 发送删除请求
+                            $.ajax({
+                                url: '<%=path%>/cart/delete.do', // 后端处理删除请求的接口
+                                type: 'GET',
+                                data: {cartId: data.cartId},
+                                success: function(result){
+                                    table_cart.reload('cartTable');
+                                    console.log(result);
+                                },
+                                error: function(){
+                                    console.error('请求错误');
+                                }
+                            });
+                            layer.close(index);
+                        });
                     }
                 });
             }
         });
-        // 监听导航栏点击事件
-        $('#navbar li').on('click', function (event) {
-            // 阻止默认链接行为
-            event.preventDefault();
-            // 获取选项的 categoryId
-            currentCategoryId = $(this).data('category-id');
-            if(currentCategoryId == '0'){
-                console.log("全部")
-                table_product.reload('custProductTable', {
-                    url: '<%=path%>/getAllProducts.do'
-                });
-            }else{
-                table_product.reload('custProductTable', {
-                    url: '<%=path%>/getProductsByCategoryId.do',
-                    where: {
-                        categoryId: currentCategoryId
-                    }
-                });
-            }
-            // 更新 Layui 数据表格的 URL
 
-        });
-
-        // 搜索按钮点击事件
-        $('#btn-search').on('click', function () {
-            //获取关键字
-            var keyword = $('#searchInput').val();
-            console.log(keyword)
-            // 更新 Layui 数据表格的 URL
-            table_product.reload('custProductTable', {
-                url: '<%=path%>/getProductsByName.do',
-                where: {
-                    productName: keyword
-                }
-            });
-        });
-        // 添加按钮点击事件
-        $('#addProduct').on('click', function () {
-            layer.open({
-                type: 2,//iframe
-                title: '添加农产品',
-                area: ['600px','600px'],
-                closeBtn: 2,
-                content: '<%=path%>/product/toAdd.do',
-                end: function(){
-                    table_product.reload("custProductTable");
-                }
-            });
-        });
         $('#refreshBtn').on('click', function () {
-            table_product.reload("custProductTable");
+            table_cart.reload("cartTable");
         });
     });
-
 </script>
 
 </body>

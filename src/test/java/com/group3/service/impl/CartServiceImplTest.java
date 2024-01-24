@@ -21,25 +21,26 @@ public class CartServiceImplTest {
 
     @Test
     public void updateCartItemQuantity() {
-        cartService.updateCartItemQuantity(1,1,4);
+        cartService.updateCartItemQuantity(123,4);
     }
 
     @Test
     public void removeProductFromCart() {
-        cartService.removeProductFromCart(1,1);
+        cartService.deleteCartById(1);
     }
 
     @Test
     public void getCartItemsByUserId() {
-        List<Cart> cartList = cartService.getCartItemsByUserId(1);
-        for (Cart c :
-                cartList) {
-            System.out.println(c);
-        }
+
     }
 
     @Test
     public void clearCartByUserId() {
         cartService.clearCartByUserId(1);
+    }
+
+    @Test
+    public void getCartById() {
+        System.out.println(cartService.getCartById(123));
     }
 }

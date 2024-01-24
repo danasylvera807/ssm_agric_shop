@@ -110,10 +110,10 @@
                 <div class="header-username">
                     <span>${user.userName}</span>
                     <div class="dropdown-menu">
-                        <a onclick="getProductsToCustomer()" href="#" class="dropdown-item">首页</a>
-                        <a  href="#" class="dropdown-item">个人资料</a>
-                        <a onclick="getOrdersToCustomer()" href="#" class="dropdown-item">我的订单</a>
-                        <a  href="#" class="dropdown-item">购物车</a>
+                        <a onclick="getProductsToCustomer()" class="dropdown-item">首页</a>
+                        <a onclick="getCartsToCustomer()" class="dropdown-item">个人资料</a>
+                        <a onclick="getCartsToCustomer()" class="dropdown-item">购物车</a>
+                        <a onclick="getOrdersToCustomer()" class="dropdown-item">我的订单</a>
                         <a  href="#" class="dropdown-item">退出</a>
                     </div>
                 </div>
@@ -149,6 +149,11 @@
     function getOrdersToCustomer() {
         var contentId = $('#shopContent');
         viewerPath = '<%=path%>/customer/order.do';
+        getViewer(viewerPath,contentId);
+    }
+    function getCartsToCustomer() {
+        var contentId = $('#shopContent');
+        viewerPath = '<%=path%>/customer/cart.do?';
         getViewer(viewerPath,contentId);
     }
 

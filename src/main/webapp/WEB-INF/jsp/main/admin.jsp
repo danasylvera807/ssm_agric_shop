@@ -120,8 +120,6 @@
 
 <script>
     var viewerPath;
-    if(${user})
-
     //加载主页面时默认加载农产品列表视图
     getProductsToAdmin();
 

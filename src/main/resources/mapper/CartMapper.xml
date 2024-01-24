@@ -25,13 +25,13 @@
     <update id="updateCartItemQuantity" parameterType="map">
         UPDATE cart
         SET quantity = #{quantity}, added_time = #{cartTime}
-        WHERE user_id = #{userId} AND product_id = #{productId}
+        WHERE cart_id = #{cartId};
     </update>
 
     <!-- 从购物车中移除商品 -->
-    <delete id="removeProductFromCart" parameterType="map">
+    <delete id="deleteCartById" parameterType="map">
         DELETE FROM cart
-        WHERE user_id = #{userId} AND product_id = #{productId}
+        WHERE cart_id = #{cartId};
     </delete>
 
     <!-- 获取用户购物车中的所有商品 -->
@@ -39,6 +39,11 @@
         SELECT * FROM cart c
             JOIN product p ON p.product_id = c.product_id
         WHERE user_id = #{userId}
+    </select>
+    <select id="getCartById" parameterType="int" resultMap="cartResultMap">
+        SELECT * FROM cart c
+            JOIN product p ON p.product_id = c.product_id
+        WHERE cart_id = #{cartId};
     </select>
 
     <!-- 清空用户购物车 -->

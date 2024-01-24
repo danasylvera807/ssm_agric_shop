@@ -60,8 +60,6 @@
             <button class="layui-btn layui-btn-sm" id="btn-search">搜索</button>
         </div>
     </div>
-    <button id="addProduct" class="layui-btn">添加农产品</button>
-    <button id="refreshBtn" class="layui-btn">刷新</button>
 </div>
 
 <div class="product-table">
@@ -170,8 +168,6 @@
                     }
                 });
             }
-            // 更新 Layui 数据表格的 URL
-
         });
 
         // 搜索按钮点击事件
@@ -186,22 +182,6 @@
                     productName: keyword
                 }
             });
-        });
-        // 添加按钮点击事件
-        $('#addProduct').on('click', function () {
-            layer.open({
-                type: 2,//iframe
-                title: '添加农产品',
-                area: ['600px','600px'],
-                closeBtn: 2,
-                content: '<%=path%>/product/toAdd.do',
-                end: function(){
-                    table_product.reload("custProductTable");
-                }
-            });
-        });
-        $('#refreshBtn').on('click', function () {
-            table_product.reload("custProductTable");
         });
     });
 

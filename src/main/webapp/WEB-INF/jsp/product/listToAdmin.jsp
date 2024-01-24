@@ -65,7 +65,7 @@
 </div>
 
 <div class="product-table">
-    <table id="productTable" lay-filter="test" class="display" style="width:100%"></table>
+    <table id="productTable" lay-filter="product_filter" class="display" style="width:100%"></table>
 </div>
 
 <!-- 商品表格操作列的模板 -->
@@ -91,7 +91,7 @@
                 limits: [5,10,15,20],
                 limit: 5,
                 id: 'productTable',
-                layFilter: 'test',
+                layFilter: 'product_filter',
                 request: {
                     pageName: 'pageNum',
                     limitName: 'pageSize'
@@ -110,7 +110,7 @@
                 ]],
                 done: function (res, curr, count) {
                     // 表格渲染完成后执行事件绑定
-                    table_product.on('tool(test)', function (obj) {
+                    table_product.on('tool(product_filter)', function (obj) {
                         var data = obj.data; // 获取当前行数据
                         var layEvent = obj.event; // 获取 lay-event 对应的值
                         if (layEvent === 'edit') {

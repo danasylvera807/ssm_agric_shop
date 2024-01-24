@@ -2,18 +2,20 @@ package com.group3.service;
 
 import com.group3.pojo.Cart;
 
-import java.util.List;
+import java.util.Map;
 
 public interface CartService {
 
     int addProductToCart(int userId, int productId);
 
-    void updateCartItemQuantity(int userId, int productId,int quantity);
+    int updateCartItemQuantity(int cartId,int quantity);
 
-    void removeProductFromCart(int userId, int productId);
+    int deleteCartById(int cartId);
 
-    List<Cart> getCartItemsByUserId(int userId);
+    Map<String, Object> getCartItemsByUserId(Integer userId,Integer pageNum,Integer pageSize);
 
-    void clearCartByUserId(int userId);
+    int clearCartByUserId(int userId);
+
+    Cart getCartById(Integer cartId);
 }
 

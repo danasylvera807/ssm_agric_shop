@@ -1,6 +1,8 @@
 package com.group3.service.impl;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.group3.mapper.CartMapper;
 import com.group3.mapper.ProductMapper;
 import com.group3.pojo.Cart;
@@ -9,7 +11,8 @@ import com.group3.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 // CartServiceImpl.java
 
@@ -42,23 +45,47 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void updateCartItemQuantity(int userId, int productId,int quantity) {
-        cartMapper.updateCartItemQuantity(userId, productId, quantity,LocalDateTimeUtil.now());
+    public int updateCartItemQuantity(int cartId,int quantity) {
+        Cart cart = cartMapper.getCartById(cartId);
+        if(cart != null){
+            Product product = cart.getCartProduct();
+            int stock = product.getProductStock();
+            if(quantity > stock){//库存不足
+                return -1;
+            }else{
+                return cartMapper.updateCartItemQuantity(cartId,quantity,LocalDateTimeUtil.now());
+            }
+        }else{
+            return 0;
+        }
+
     }
 
     @Override
-    public void removeProductFromCart(int userId, int productId) {
-        cartMapper.removeProductFromCart(userId, productId);
+    public int deleteCartById(int cartId) {
+        return cartMapper.deleteCartById(cartId);
     }
 
     @Override
-    public List<Cart> getCartItemsByUserId(int userId) {
-        return cartMapper.getCartItemsByUserId(userId);
+    public Map<String, Object> getCartItemsByUserId(Integer userId,Integer pageNum,Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        PageInfo<Cart> pageInfo = new PageInfo<>(cartMapper.getCartItemsByUserId(userId));
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",0);
+        map.put("msg","success");
+        map.put("count",pageInfo.getTotal());
+        map.put("data",pageInfo.getList());
+        return map;
     }
 
     @Override
-    public void clearCartByUserId(int userId) {
-        cartMapper.clearCartByUserId(userId);
+    public int clearCartByUserId(int userId) {
+        return cartMapper.clearCartByUserId(userId);
+    }
+
+    @Override
+    public Cart getCartById(Integer cartId) {
+        return cartMapper.getCartById(cartId);
     }
 }
 
