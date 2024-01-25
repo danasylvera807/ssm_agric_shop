@@ -71,9 +71,10 @@
                 type: "Get",
                 data: {userName: username},
                 success: function (response) {
-                    var userInfo = { /* 用户信息对象 */ };
                     sessionStorage.setItem('userInfo', JSON.stringify(response));
-                    sessionStorage.setItem('userLoggedIn', 'true');
+                    var store = sessionStorage.getItem('userInfo');
+                    console.log(store);
+                    console.log(storedUserInfo);
                     },
                 error: function (error) {
                     // 请求失败时的处理
