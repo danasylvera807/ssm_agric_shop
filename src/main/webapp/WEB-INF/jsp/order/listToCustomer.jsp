@@ -45,9 +45,6 @@
 <body>
 <div class="order-container">
     <ul id="navbar" class="layui-nav" lay-filter="horizontalNav">
-        <li data-category-id="0" class="layui-nav-item">
-            <a href="#">全部</a>
-        </li>
         <c:forEach var="s" items="${states}">
             <li data-category-id="${s}" class="layui-nav-item">
                 <a href="#">${s.getState()}</a>
@@ -111,7 +108,9 @@
             },
             cols: [[
                 {field: 'orderNumber', title: '订单号', width: '10%'},
-                {field: 'userAddr', title: '收货地址', width: '20%'},
+                {field: 'orderUser', title: '收货地址', width: '20%', templet: function(d){
+                        return d.orderUser ? d.orderUser.userAddress : '';
+                    }},
                 {field: 'orderTime', title: '订单时间', width: '20%',sort: true},
                 {field: 'orderTotalAmount', title: '总金额', width: '10%'},
                 {field: 'shippingAddress', title: '发货地址', width: '20%'},

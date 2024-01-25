@@ -98,7 +98,6 @@
 </div>
 
 <script>
-  console.log(${product.productProductionDate})
   //Demo
   layui.use(['form','layer','jquery'], function(){
     var form = layui.form;

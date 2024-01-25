@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="订单取消功能完成">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/info.jsp" afterDir="false" />
+    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="切换jquery库到本地">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/updatePwd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/details.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,7 +342,7 @@
       <workItem from="1706088351417" duration="49000" />
       <workItem from="1706095081624" duration="18165000" />
       <workItem from="1706142657069" duration="32197000" />
-      <workItem from="1706179746257" duration="2043000" />
+      <workItem from="1706179746257" duration="20100000" />
     </task>
     <task id="LOCAL-00001" summary="登录注册功能完成，农产品的管理功能完成">
       <created>1706026713473</created>
@@ -452,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706173206484</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="切换jquery库到本地">
+      <created>1706182242116</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1706182242116</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +523,8 @@
     <MESSAGE value="登录功能修改" />
     <MESSAGE value="用户订单功能完成" />
     <MESSAGE value="订单取消功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="订单取消功能完成" />
+    <MESSAGE value="切换jquery库到本地" />
+    <option name="LAST_COMMIT_MESSAGE" value="切换jquery库到本地" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

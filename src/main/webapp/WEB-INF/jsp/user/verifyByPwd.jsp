@@ -42,7 +42,7 @@
                 <input id="codeInput" type="text" name="captchaCode" required  placeholder="请输入验证码" autocomplete="off" class="layui-input" style="width: 120px;">
             </div>
             <div class="layui-input-inline">
-                <img id="myImage" src="<%=path%>/captcha.do" alt="My Image">看不清？点击更换
+                <img id="myImage" src="<%=path%>/captcha.do" alt="My Image" onclick="change()">看不清？点击更换
             </div>
         </div>
         <div class="layui-form-item">
@@ -60,6 +60,11 @@
     if(storedUserInfo!=null){
         var userName = JSON.parse(storedUserInfo).userName;
         window.location.href='<%=path%>/shop.do?userName='+userName;
+    }
+
+    function change() {
+        var timestamp = new Date().getTime();
+        $('#myImage').attr('src', '<%=path%>/captcha.do?' + timestamp);
     }
 
     function saveUserInfo() {
@@ -85,10 +90,7 @@
         var $ = layui.jquery;
         var form = layui.form;
         var layer = layui.layer;
-        $('#myImage').on('click', function (event) {
-            this.src = '<%=path%>/captcha.do';
-            console.log(event);
-        });
+
         // 监听表单提交事件
         form.on('submit(login)', function(data){
             // 使用 Ajax 提交表单数据
@@ -104,7 +106,7 @@
                     }else if(response == 'code error'){
                         layer.msg('验证码错误');
                         $('#codeInput').val('');
-                        $('#myImage').src = '<%=path%>/captcha.do';
+                        $('#myImage').click();
                     }else if(response == '顾客'){
                         layer.msg('登录成功');
                         //保存用户名

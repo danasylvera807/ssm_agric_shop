@@ -3,6 +3,7 @@ package com.group3.controller;
 import com.group3.pojo.User;
 import com.group3.service.UserService;
 import com.group3.utils.VerifyHelper;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -107,5 +108,50 @@ public class UserController {
         model.addAttribute("user",userService.getByUserId(userId));
         return "user/info";
     }
+    @RequestMapping("user/toUpdateEmail")
+    public String toUpdateEmail(){
+        return "user/updateEmail";
+    }
+    @RequestMapping(value = "user/update", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String update(@RequestParam Integer userId,
+                          @RequestParam String userEmail,
+                          @RequestParam String phoneNumber,
+                          @RequestParam String userAddress){
+        User user = userService.getByUserId(userId);
+        user.setUserEmail(userEmail);
+        user.setUserAddress(userAddress);
+        user.setPhoneNumber(phoneNumber);
+        if(userService.update(user)>0){
+            return "修改成功";
+        }else{
+            return "修改失败";
+        }
+    }
+
+    @RequestMapping("user/toPwd")
+    public String toPwd(){
+        return "user/updatePwd";
+    }
+    @RequestMapping(value = "user/pwd", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String pwd(@RequestParam Integer userId,
+                      @RequestParam String userPwd){
+        User user = userService.getByUserId(userId);
+        String mdPwd = DigestUtils.md5Hex(userPwd);
+        if(!user.getUserPwd().equals(mdPwd)){
+            return "pwd mistake";
+        }else{
+            user.setUserPwd(mdPwd);
+            if(userService.update(user)>0){
+                return "success";
+            }else{
+                return "error";
+            }
+        }
+    }
+
+
+
 
 }

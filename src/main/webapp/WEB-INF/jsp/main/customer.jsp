@@ -107,10 +107,10 @@
                     <span>${user.userName}</span>
                     <div class="dropdown-menu">
                         <a onclick="getProductsToCustomer()" class="dropdown-item">首页</a>
-                        <a onclick="getCartsToCustomer()" class="dropdown-item">个人资料</a>
                         <a onclick="getCartsToCustomer()" class="dropdown-item">购物车</a>
                         <a onclick="getOrdersToCustomer()" class="dropdown-item">我的订单</a>
-                        <a  href="#" class="dropdown-item">退出</a>
+                        <a onclick="getCustomerInfo()" class="dropdown-item">个人资料</a>
+                        <a onclick="logout()" class="dropdown-item">退出</a>
                     </div>
                 </div>
             </c:when>
@@ -134,8 +134,6 @@
 
 <script>
     var viewerPath;
-    var storedUserInfo = sessionStorage.getItem('userInfo');
-    var userInfoObject = JSON.parse(storedUserInfo);
     //加载主页面时默认加载农产品列表视图
     getProductsToCustomer();
 
@@ -156,10 +154,17 @@
     }
     function getCustomerInfo() {
         var contentId = $('#shopContent');
-        viewerPath = '<%=path%>/customer/info.do?userId=' + userInfoObject.userId;
+        var storedUserInfo = sessionStorage.getItem('userInfo');
+        var userInfoObject = JSON.parse(storedUserInfo);
+        console.log(userInfoObject);
+        viewerPath = '<%=path%>/user/info.do?userId=' + userInfoObject.userId;
         getViewer(viewerPath,contentId);
     }
-
+    function logout() {
+        sessionStorage.removeItem('userInfo');
+        // 返回到启动页
+        window.location.href = '<%=path%>/agricshop.do';
+    }
 
     function getViewer(viewerPath,contentId) {
         layui.use('element', function(){
