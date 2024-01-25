@@ -9,14 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="禁止多个用户在同一浏览器登录">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/create.jsp" afterDir="false" />
+    <list default="true" id="73d7472c-2062-4ba4-a168-f7954575c92b" name="Changes" comment="登录功能修改">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/details.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/jquery-3.6.4.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/enums/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/enums/OrderState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/mapper/OrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/group3/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/CartServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order/listToCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product/listToCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/verifyByPwd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/enums/OrderStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/enums/OrderStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/enums/OrderStatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/enums/OrderStatusTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/group3/service/impl/OrderServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,35 +84,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Javaspace/Java主流框架学习/shop/src/main/webapp/img&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.09208103&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;8a28e66c5cbe16651b09e70bc9154d08&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "last_opened_file_path": "D:/Javaspace/Java主流框架学习/shop/src/main/webapp/static/js",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.09208103",
+    "ruby.rails.projectView.checked": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
+    "spring.configuration.checksum": "8a28e66c5cbe16651b09e70bc9154d08"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\static\js" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\img" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\static" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp" />
       <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\resources" />
-      <recent name="D:\Javaspace\Java主流框架学习\shop\src\main\webapp\images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -119,22 +130,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat for agric_shop">
-    <configuration name="CartServiceImplTest.getCartById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.group3.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.CartServiceImplTest" />
-      <option name="METHOD_NAME" value="getCartById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CartServiceImplTest.removeProductFromCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
@@ -151,7 +146,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartServiceImplTest.updateCartItemQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceImplTest.addOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -160,14 +155,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.CartServiceImplTest" />
-      <option name="METHOD_NAME" value="updateCartItemQuantity" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.OrderServiceImplTest" />
+      <option name="METHOD_NAME" value="addOrder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceImplTest.getOrdersByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -176,14 +171,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="add" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.OrderServiceImplTest" />
+      <option name="METHOD_NAME" value="getOrdersByUserId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.getByUserEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderStateTest.getStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group3.enums.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.group3.enums" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.enums.OrderStateTest" />
+      <option name="METHOD_NAME" value="getStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplTest.getProductByPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
         <pattern>
@@ -192,8 +203,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.group3.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="getByUserEmail" />
+      <option name="MAIN_CLASS_NAME" value="com.group3.service.impl.ProductServiceImplTest" />
+      <option name="METHOD_NAME" value="getProductByPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -292,20 +303,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CartServiceImplTest.getCartById" />
+      <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
+      <item itemvalue="JUnit.OrderServiceImplTest.getOrdersByUserId" />
+      <item itemvalue="JUnit.OrderStateTest.getStatus" />
+      <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
       <item itemvalue="JUnit.CartServiceImplTest.removeProductFromCart" />
-      <item itemvalue="JUnit.CartServiceImplTest.updateCartItemQuantity" />
-      <item itemvalue="JUnit.UserServiceImplTest.add" />
-      <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
       <item itemvalue="Tomcat Server.Tomcat for agric_shop" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderServiceImplTest.addOrder" />
+        <item itemvalue="JUnit.OrderServiceImplTest.getOrdersByUserId" />
+        <item itemvalue="JUnit.OrderStateTest.getStatus" />
+        <item itemvalue="JUnit.ProductServiceImplTest.getProductByPage" />
         <item itemvalue="JUnit.CartServiceImplTest.removeProductFromCart" />
-        <item itemvalue="JUnit.CartServiceImplTest.updateCartItemQuantity" />
-        <item itemvalue="JUnit.CartServiceImplTest.getCartById" />
-        <item itemvalue="JUnit.UserServiceImplTest.add" />
-        <item itemvalue="JUnit.UserServiceImplTest.getByUserEmail" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +349,8 @@
       <workItem from="1706012376377" duration="14982000" />
       <workItem from="1706056628364" duration="27663000" />
       <workItem from="1706088351417" duration="49000" />
-      <workItem from="1706095081624" duration="17565000" />
+      <workItem from="1706095081624" duration="18165000" />
+      <workItem from="1706142657069" duration="28029000" />
     </task>
     <task id="LOCAL-00001" summary="登录注册功能完成，农产品的管理功能完成">
       <created>1706026713473</created>
@@ -410,7 +422,35 @@
       <option name="project" value="LOCAL" />
       <updated>1706106696051</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="生成订单、添加订单">
+      <created>1706113270573</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1706113270573</updated>
+    </task>
+    <task id="LOCAL-00012" summary="设置启动页">
+      <created>1706143838782</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706143838782</updated>
+    </task>
+    <task id="LOCAL-00013" summary="登录功能修改">
+      <created>1706144854065</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706144854065</updated>
+    </task>
+    <task id="LOCAL-00014" summary="登录功能修改">
+      <created>1706146508256</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1706146508256</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +505,10 @@
     <MESSAGE value="加入购物车功能完成" />
     <MESSAGE value="购物车功能完成" />
     <MESSAGE value="禁止多个用户在同一浏览器登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="禁止多个用户在同一浏览器登录" />
+    <MESSAGE value="生成订单、添加订单" />
+    <MESSAGE value="设置启动页" />
+    <MESSAGE value="登录功能修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录功能修改" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

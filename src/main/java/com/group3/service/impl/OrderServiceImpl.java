@@ -9,6 +9,7 @@ import com.group3.mapper.OrderMapper;
 import com.group3.mapper.UserMapper;
 import com.group3.pojo.Cart;
 import com.group3.pojo.Order;
+import com.group3.pojo.User;
 import com.group3.service.OrderService;
 import com.group3.utils.OrderNumberGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,9 @@ public class OrderServiceImpl implements OrderService {
         return orderMapper.getOrderById(orderId);
     }
 
-    public Map<String,Object> getOrdersByUserId(int userId, int pageNum, int pageSize) {
+    public Map<String,Object> getOrdersByUserId(int userId,OrderState orderState, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        PageInfo<Order> pageInfo = new PageInfo<>(orderMapper.getOrdersByUserId(userId));
+        PageInfo<Order> pageInfo = new PageInfo<>(orderMapper.getOrdersByUserId(userId,orderState));
         Map<String,Object> map = new HashMap<>();
         map.put("code",0);
         map.put("msg","success");
@@ -70,7 +71,16 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order getOrderByNumber(String orderNumber) {
-        return orderMapper.getOrderByNumber(orderNumber);
+        Order order =  orderMapper.getOrderByNumber(orderNumber);
+        User user = userMapper.getByUserId(order.getOrderUser().getUserId());
+        if(user != null){
+            order.setOrderUser(user);
+        }
+        return order;
+    }
+    @Override
+    public Order getOrderByNumberAndUserId(String orderNumber,Integer userId) {
+        return orderMapper.getOrderByNumberAndUserId(orderNumber,userId);
     }
 
     /**
@@ -85,11 +95,13 @@ public class OrderServiceImpl implements OrderService {
         //计算金额
         double orderTotalAmount = 0;
         List<Cart> cartList = cartMapper.getCartItemsByUserId(userId);
+        if(cartList.isEmpty()){
+            return null;
+        }
         for (Cart c :
                 cartList) {
             orderTotalAmount += c.getQuantity() * c.getCartProduct().getProductPrice();
         }
-        System.out.println(orderTotalAmount);
         //生成订单对象，装填属性
         Order order = new Order();
         order.setOrderUser(userMapper.getByUserId(userId));
@@ -99,7 +111,6 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderTime(LocalDateTimeUtil.now());
         order.setShippingAddress("江苏南通如皋万寿路人才公寓17号楼");
         return order;
-
     }
 
     @Override

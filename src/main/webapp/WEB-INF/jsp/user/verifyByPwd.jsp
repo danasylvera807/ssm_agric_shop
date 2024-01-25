@@ -73,8 +73,6 @@
                 success: function (response) {
                     sessionStorage.setItem('userInfo', JSON.stringify(response));
                     var store = sessionStorage.getItem('userInfo');
-                    console.log(store);
-                    console.log(storedUserInfo);
                     },
                 error: function (error) {
                     // 请求失败时的处理

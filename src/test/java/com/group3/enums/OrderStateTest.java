@@ -6,7 +6,7 @@ public class OrderStateTest {
 
     @Test
     public void getStatus() {
-        System.out.println(OrderState.CANCELED.getStatus().toString());
-        System.out.println(OrderState.COMPLETED.toString());
+        OrderState[] values = OrderState.values();
+        System.out.println();
     }
 }

@@ -18,7 +18,7 @@ public class OrderServiceImplTest {
 
     @Test
     public void getOrdersByUserId() {
-        System.out.println(orderService.getOrdersByUserId(1,1,3));
+        System.out.println(orderService.getOrdersByUserId(1,OrderState.PROCESSING,1,3));
     }
 
     @Test
@@ -27,20 +27,18 @@ public class OrderServiceImplTest {
     }
     @Test
     public void getOrdersByStatus() {
-        System.out.println(orderService.getOrdersByStatus(OrderState.COMPLETED,1,1));
     }
 
 
     @Test
     public void addOrder() {
-
+        orderService.getOrderByNumberAndUserId("BIZ20240125090949577273",8);
 
     }
 
     @Test
     public void updateOrder() {
         orderService.updateOrderAddr(1,"测试地址");
-        orderService.updateOrderState(1,OrderState.CANCELED);
     }
 
     @Test
@@ -48,7 +46,7 @@ public class OrderServiceImplTest {
         String s = "CANCELED";
         try{
             OrderState orderState = Enum.valueOf(OrderState.class,s);
-            System.out.println(orderState.getStatus());
+            System.out.println();
         }catch (Exception e){
             System.out.println("match fail");
             e.printStackTrace();

@@ -11,8 +11,10 @@ public interface OrderMapper {
     Order getOrderById(@Param("orderId") int orderId);
     //根据订单号查询单个订单信息
     Order getOrderByNumber(@Param("orderNumber") String orderNumber);
+    Order getOrderByNumberAndUserId(@Param("orderNumber") String orderNumber,@Param("userId") Integer usrId);
+
     // 查询某用户的所有订单
-    List<Order> getOrdersByUserId(@Param("userId") int userId);
+    List<Order> getOrdersByUserId(@Param("userId") int userId,@Param("orderState") OrderState orderState);
 
     // 查询所有订单
     List<Order> getAllOrders();

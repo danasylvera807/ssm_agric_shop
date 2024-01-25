@@ -66,7 +66,7 @@
         var table_cart = layui.table;
         var $ = layui.jquery;
         var layer = layui.layer;
-
+        var tableLength;
         // 渲染表格
         table_cart.render({
             elem: '#cartTable',
@@ -96,6 +96,7 @@
                 {field: 'operation', title: '操作', width: '30%', toolbar: '#barDemo'}
             ]],
             done: function (res, curr, count) {
+                tableLength=count;
                 // 表格渲染完成后执行事件绑定
                 table_cart.on('tool(cart_filter)', function (obj) {
                     var data = obj.data; // 获取当前行数据
@@ -104,7 +105,7 @@
                         // 执行查看详情操作
                         layer.open({
                             type: 2,//iframe
-                            title: '更新农产品',
+                            title: '更新数量',
                             area: ['600px','600px'],
                             closeBtn: 2,
                             content: '<%=path%>/cart/toUpdate.do?cartId='+data.cartId,
@@ -141,16 +142,23 @@
             table_cart.reload("cartTable");
         });
         $('#countBtn').on('click', function () {
-            layer.open({
-                type: 2,//iframe
-                title: '订单结算',
-                area: ['600px','600px'],
-                closeBtn: 2,
-                content: '<%=path%>/order/create.do?userId='+userId,
-                end: function(){
-                    table_cart.reload("cartTable");
-                }
-            });
+            console.log(tableLength);
+            if(tableLength === 0){
+                layer.msg('购物车为空');
+
+            }else{
+                layer.open({
+                    type: 2,//iframe
+                    title: '订单结算',
+                    area: ['600px','600px'],
+                    closeBtn: 2,
+                    content: '<%=path%>/order/create.do?userId='+userId,
+                    end: function(){
+                        table_cart.reload("cartTable");
+                    }
+                });
+            }
+
             console.log('结算');
         });
 

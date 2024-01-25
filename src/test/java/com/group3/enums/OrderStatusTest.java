@@ -8,7 +8,6 @@ public class OrderStatusTest {
 
     @Test
     public void getStatus() {
-        System.out.println(OrderStatus.CANCELED.getStatus().toString());
-        System.out.println(OrderStatus.COMPLETED.toString());
+
     }
 }
