@@ -85,5 +85,15 @@ public class OrderController {
             return "error";
         }
     }
+    @RequestMapping (value = "order/delete", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String delete(@RequestParam Integer orderId){
+        if(orderService.deleteOrder(orderId)){
+            return "success";
+        }else{
+            return "error";
+        }
+    }
+
 
 }

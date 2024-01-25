@@ -107,7 +107,7 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderUser(userMapper.getByUserId(userId));
         order.setOrderTotalAmount(orderTotalAmount);
         order.setOrderNumber(orderNumber);
-        order.setOrderState(OrderState.PROCESSING);
+        order.setOrderState(OrderState.PENDING_PAYMENT);
         order.setOrderTime(LocalDateTimeUtil.now());
         order.setShippingAddress("江苏南通如皋万寿路人才公寓17号楼");
         return order;

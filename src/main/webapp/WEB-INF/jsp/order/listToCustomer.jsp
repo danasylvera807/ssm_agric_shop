@@ -159,8 +159,29 @@
                             }
 
                         });
-                        console.log('确认')
                     }else if (layEvent === 'cancel') {
+                        layer.confirm('确定删除该条数据吗？', function (index) {
+                            var requestData = {
+                                orderId: data.orderId
+                            };
+                            $.ajax({
+                                url: '<%=path%>/order/delete.do', // 替换成你的后端接口地址
+                                type: 'POST',
+                                data: requestData,
+                                success: function (response) {
+                                    // 请求成功时的处理
+                                    if(response == 'success'){
+                                        layer.msg('订单已取消');
+                                        table_order.reload("orderTable");
+                                    }
+                                },
+                                error: function (error) {
+                                    // 请求失败时的处理
+                                    console.error('失败:', error);
+                                }
+                            });
+                        });
+
                         console.log('取消订单')
                     }
                 });
