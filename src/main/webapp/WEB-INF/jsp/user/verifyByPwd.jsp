@@ -27,19 +27,19 @@
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-block">
-                <input id="userNameInput" type="text" name="userName" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                <input id="userNameInput" type="text" required name="userName" placeholder="请输入用户名" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-block">
-                <input type="password" name="userPwd"   placeholder="请输入密码" autocomplete="off" class="layui-input">
+                <input type="password" name="userPwd" required  placeholder="请输入密码" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">验证码</label>
             <div class="layui-input-inline">
-                <input id="codeInput" type="text" name="captchaCode"   placeholder="请输入验证码" autocomplete="off" class="layui-input" style="width: 120px;">
+                <input id="codeInput" type="text" name="captchaCode" required  placeholder="请输入验证码" autocomplete="off" class="layui-input" style="width: 120px;">
             </div>
             <div class="layui-input-inline">
                 <img id="myImage" src="<%=path%>/captcha.do" alt="My Image">看不清？点击更换
@@ -47,7 +47,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button id="loginBtn" class="layui-btn" lay-submit lay-filter="login">登录</button>
+                <button id="loginBtn" type="submit" class="layui-btn" lay-submit lay-filter="login">登录</button>
                 <button id="registerBtn" type="button" class="layui-btn layui-btn-primary">注册</button>
             </div>
         </div>
@@ -57,12 +57,12 @@
 <script>
 
     var storedUserInfo = sessionStorage.getItem('userInfo');
-    var userName = JSON.parse(storedUserInfo).userName;
-    if(userName!=null){
+    if(storedUserInfo!=null){
+        var userName = JSON.parse(storedUserInfo).userName;
         window.location.href='<%=path%>/shop.do?userName='+userName;
     }
 
-    function saveUserId() {
+    function saveUserInfo() {
         layui.use(function(){
             var $ = layui.jquery;
             var username = $('#userNameInput').val();
