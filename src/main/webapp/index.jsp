@@ -4,6 +4,8 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
+<% response.sendRedirect("/agricshop/agricshop.do"); %>
+
 <html>
 <head>
     <title>test</title>

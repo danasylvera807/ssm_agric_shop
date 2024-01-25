@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -71,7 +72,10 @@ public class UserController {
         System.out.println(VerifyHelper.getCode());
         return response1;
     }
-
+    @GetMapping("/")
+    public RedirectView redirectToShop() {
+        return new RedirectView("/agricshop.do", true);
+    }
     @GetMapping("agricshop")
     public String shopWithoutUser(Model model){
         return "main/customer";
