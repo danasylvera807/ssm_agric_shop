@@ -102,4 +102,10 @@ public class UserController {
     public User getUserByName(@RequestParam String userName){
         return userService.getByUserName(userName);
     }
+    @RequestMapping("user/info")
+    public String info(@RequestParam Integer userId,Model model){
+        model.addAttribute("user",userService.getByUserId(userId));
+        return "user/info";
+    }
+
 }

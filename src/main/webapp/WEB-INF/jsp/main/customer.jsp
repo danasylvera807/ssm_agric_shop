@@ -134,6 +134,8 @@
 
 <script>
     var viewerPath;
+    var storedUserInfo = sessionStorage.getItem('userInfo');
+    var userInfoObject = JSON.parse(storedUserInfo);
     //加载主页面时默认加载农产品列表视图
     getProductsToCustomer();
 
@@ -149,7 +151,12 @@
     }
     function getCartsToCustomer() {
         var contentId = $('#shopContent');
-        viewerPath = '<%=path%>/customer/cart.do?';
+        viewerPath = '<%=path%>/customer/cart.do';
+        getViewer(viewerPath,contentId);
+    }
+    function getCustomerInfo() {
+        var contentId = $('#shopContent');
+        viewerPath = '<%=path%>/customer/info.do?userId=' + userInfoObject.userId;
         getViewer(viewerPath,contentId);
     }
 

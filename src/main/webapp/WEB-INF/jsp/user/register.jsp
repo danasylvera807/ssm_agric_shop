@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<%=path%>/static/layui/css/layui.css">
     <script src="<%=path%>/static/layui/layui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="<%=path%>/static/js/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 <div class="layui-container">

@@ -14,8 +14,12 @@
 <html>
 <head>
     <title>添加农产品</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.6.8/css/layui.css">
-    <script src="https://cdn.staticfile.org/layui/2.6.8/layui.js"></script>
+    <<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%=path%>/static/layui/css/layui.css">
+    <script src="<%=path%>/static/layui/layui.js"></script>
+    <script src="<%=path%>/static/js/jquery-3.6.4.min.js"></script>
+
 </head>
 <body>
 
