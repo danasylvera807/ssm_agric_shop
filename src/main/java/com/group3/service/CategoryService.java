@@ -10,10 +10,10 @@ public interface CategoryService {
 
     List<Category> getAllCategories();
 
-    void addCategory(Category category);
+    int addCategory(Category category);
 
-    void updateCategory(Category category);
+    int updateCategory(Category category);
 
-    void deleteCategory(int categoryId);
+    int deleteCategory(int categoryId);
 }
 

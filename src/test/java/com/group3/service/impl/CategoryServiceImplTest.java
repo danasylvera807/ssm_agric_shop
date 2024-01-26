@@ -41,6 +41,6 @@ public class CategoryServiceImplTest {
 
     @Test
     public void deleteCategory() {
-        categoryService.deleteCategory(3);
+        System.out.println(categoryService.deleteCategory(4));
     }
 }

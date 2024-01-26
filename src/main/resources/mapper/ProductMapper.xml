@@ -78,5 +78,8 @@
     <delete id="deleteProduct" parameterType="int">
         DELETE FROM product WHERE product_id = #{productId}
     </delete>
+    <delete id="deleteProductByCategoryId">
+        DELETE FROM product WHERE category_id = #{categoryId}
+    </delete>
 
 </mapper>

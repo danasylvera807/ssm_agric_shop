@@ -14,5 +14,6 @@ public interface ProductMapper {
     public int addProduct(Product product);
     public int updateProduct(Product product);
     public int deleteProduct(@Param("productId") int productId);
+    public int deleteProductByCategoryId(@Param("categoryId") int categoryId);
 
 }

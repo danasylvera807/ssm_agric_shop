@@ -1,7 +1,5 @@
 package com.group3.service;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.group3.pojo.Product;
 
 import java.util.Map;
@@ -19,4 +17,5 @@ public interface ProductService {
     public boolean updateProduct(Product product);
     // 删除产品
     public boolean deleteProduct(int productId);
+    public int deleteProductByCategoryId(int categoryId);
 }

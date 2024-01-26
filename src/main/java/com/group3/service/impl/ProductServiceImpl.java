@@ -6,13 +6,10 @@ import com.github.pagehelper.PageInfo;
 import com.group3.mapper.ProductMapper;
 import com.group3.pojo.Product;
 import com.group3.service.ProductService;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -81,4 +78,11 @@ public class ProductServiceImpl implements ProductService {
     public boolean deleteProduct(int productId) {
         return productMapper.deleteProduct(productId) > 0;
     }
+
+    @Override
+    public int deleteProductByCategoryId(int categoryId) {
+        return productMapper.deleteProductByCategoryId(categoryId);
+    }
+
+
 }

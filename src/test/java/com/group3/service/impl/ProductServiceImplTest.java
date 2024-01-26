@@ -50,4 +50,9 @@ public class ProductServiceImplTest {
     public void deleteProduct() {
         System.out.println(productService.deleteProduct(4));
     }
+    @Test
+    public void deleteProductByCatrgoryId() {
+        System.out.println(productService.deleteProductByCategoryId(4));
+    }
+
 }

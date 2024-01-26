@@ -105,10 +105,10 @@
             <span>${user.userName}</span>
             <div class="dropdown-menu">
                 <a onclick="getProductsToAdmin()" class="dropdown-item">农产品管理</a>
-                <a href="#" class="dropdown-item">分类管理</a>
+                <a onclick="getCategoriesToAdmin()" class="dropdown-item">分类管理</a>
                 <a onclick="getOrdersToAdmin()" class="dropdown-item">订单管理</a>
                 <a href="#" class="dropdown-item">可视化管理</a>
-                <a href="#" class="dropdown-item">退出登录</a>
+                <a onclick="logout()" class="dropdown-item">退出登录</a>
             </div>
         </div>
     </div>
@@ -134,11 +134,20 @@
         getViewer(viewerPath,contentId);
     }
 
+    function getCategoriesToAdmin() {
+        var contentId = $('#AdminContent');
+        viewerPath = '<%=path%>/admin/category.do';
+        getViewer(viewerPath,contentId);
+    }
+    function logout() {
+        sessionStorage.removeItem('userInfo');
+        // 返回到启动页
+        window.location.href = '<%=path%>/login.do';
+    }
 
     function getViewer(viewerPath,contentId) {
         layui.use('element', function(){
             var element = layui.element;
-
             // 使用 jQuery 发送 GET 请求
             $.ajax({
                 url: viewerPath,
