@@ -55,8 +55,8 @@
 </form>
 
 <script>
-
     var storedUserInfo = sessionStorage.getItem('userInfo');
+    console.log(storedUserInfo);
     if(storedUserInfo!=null){
         var userName = JSON.parse(storedUserInfo).userName;
         window.location.href='<%=path%>/shop.do?userName='+userName;
@@ -77,7 +77,6 @@
                 data: {userName: username},
                 success: function (response) {
                     sessionStorage.setItem('userInfo', JSON.stringify(response));
-                    var store = sessionStorage.getItem('userInfo');
                     },
                 error: function (error) {
                     // 请求失败时的处理

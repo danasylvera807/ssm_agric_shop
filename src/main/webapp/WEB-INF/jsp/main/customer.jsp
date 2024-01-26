@@ -133,6 +133,7 @@
 </div>
 
 <script>
+
     var viewerPath;
     //加载主页面时默认加载农产品列表视图
     getProductsToCustomer();
@@ -163,7 +164,7 @@
     function logout() {
         sessionStorage.removeItem('userInfo');
         // 返回到启动页
-        window.location.href = '<%=path%>/agricshop.do';
+        window.location.href = '<%=path%>/logout.do';
     }
 
     function getViewer(viewerPath,contentId) {

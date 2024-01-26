@@ -142,7 +142,7 @@
     function logout() {
         sessionStorage.removeItem('userInfo');
         // 返回到启动页
-        window.location.href = '<%=path%>/login.do';
+        window.location.href = '<%=path%>/logout.do';
     }
 
     function getViewer(viewerPath,contentId) {

@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -34,20 +35,30 @@ public class UserController {
     public String loginByPwd(@RequestParam String userName,
                              @RequestParam String userPwd,
                              @RequestParam String captchaCode,
-                             Model model
+                             Model model,HttpServletResponse response,HttpServletRequest request
                              ){
         if(!userService.pwdLogin(userName,userPwd)){
             return "user error";//用户名或密码错误
         }else if(!(captchaCode.equals(VerifyHelper.getCode()))){
             return "code error";//验证码错误
         }else {
-            return userService.getByUserName(userName).getUserIdentity().getIdentity();
+            User user = userService.getByUserName(userName);
+            HttpSession session = request.getSession();
+            session.setAttribute("user",user);
+            return user.getUserIdentity().getIdentity();
         }
     }
 
     @GetMapping("register")
     public String register(){
         return "user/register";
+    }
+    @GetMapping("logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        System.out.println(session.getAttribute("user"));
+        session.removeAttribute("user");
+        return "redirect:login.do";
     }
 
     @PostMapping(value = "registerAction", produces = "text/plain;charset=UTF-8")
@@ -73,11 +84,7 @@ public class UserController {
         System.out.println(VerifyHelper.getCode());
         return response1;
     }
-    @GetMapping("/")
-    public RedirectView redirectToShop() {
-        return new RedirectView("/agricshop.do", true);
-    }
-    @GetMapping("agricshop")
+    @GetMapping("startup")
     public String shopWithoutUser(Model model){
         return "main/customer";
     }@GetMapping("shop")
@@ -146,7 +153,6 @@ public class UserController {
             }
         }
     }
-
 
 
 
