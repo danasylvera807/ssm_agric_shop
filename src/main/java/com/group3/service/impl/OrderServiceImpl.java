@@ -58,9 +58,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Map<String,Object> getOrdersByStatus(OrderState orderState,int pageNum,int pageSize) {
+    public Map<String,Object> getOrdersByState(OrderState orderState,int pageNum,int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        PageInfo<Order> pageInfo = new PageInfo<>(orderMapper.getOrdersByStatus(orderState));
+        List<Order> orderList = orderMapper.getOrdersByStatus(orderState);
+        PageInfo<Order> pageInfo = new PageInfo<>(orderList);
         Map<String,Object> map = new HashMap<>();
         map.put("code",0);
         map.put("msg","success");

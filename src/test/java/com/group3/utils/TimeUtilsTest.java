@@ -1,6 +1,7 @@
 package com.group3.utils;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
+import com.group3.enums.UserIdentity;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class TimeUtilsTest {
 
     @Test
     public void timeToString() {
-        System.out.println(LocalDateTimeUtil.now().toString());
+        System.out.println(UserIdentity.CUSTOMER.toString());
     }
 
     @Test

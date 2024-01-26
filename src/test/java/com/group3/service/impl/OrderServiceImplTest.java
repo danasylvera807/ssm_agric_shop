@@ -23,10 +23,11 @@ public class OrderServiceImplTest {
 
     @Test
     public void getAllOrders() {
-
+        System.out.println(orderService.getOrderByNumber("BIZ20240125090949577273"));
     }
     @Test
     public void getOrdersByStatus() {
+        System.out.println(orderService.getOrdersByState(OrderState.PROCESSING,1,3));
     }
 
 

@@ -19,7 +19,7 @@ public interface OrderMapper {
     // 查询所有订单
     List<Order> getAllOrders();
     //根据订单状态查询
-    List<Order> getOrdersByStatus(@Param("orderStatus") OrderState orderState);
+    List<Order> getOrdersByStatus(@Param("orderState") OrderState orderState);
 
     // 添加订单
     int addOrder(Order order);

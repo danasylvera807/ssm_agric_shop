@@ -55,12 +55,20 @@ public class OrderController {
     }
     @RequestMapping("order/listToCustomer")
     @ResponseBody
-    public Map<String, Object> list(@RequestParam Integer userId,
+    public Map<String, Object> listToCustomer(@RequestParam Integer userId,
                                    @RequestParam OrderState orderState,
                                    @RequestParam Integer pageNum,
                                    @RequestParam Integer pageSize){
         return orderService.getOrdersByUserId(userId,orderState,pageNum,pageSize);
     }
+    @RequestMapping("order/listToAdmin")
+    @ResponseBody
+    public Map<String, Object> listToAdmin(@RequestParam OrderState orderState,
+                                   @RequestParam Integer pageNum,
+                                   @RequestParam Integer pageSize){
+        return orderService.getOrdersByState(orderState,pageNum,pageSize);
+    }
+
     @RequestMapping(value = "order/searchForCustomer", produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String search(@RequestParam String orderNumber,@RequestParam Integer userId){
@@ -71,11 +79,29 @@ public class OrderController {
             return "success";
         }
     }
+    @RequestMapping(value = "order/searchForAdmin", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String searchForAdmin(@RequestParam String orderNumber){
+        Order order = orderService.getOrderByNumber(orderNumber);
+        if(order == null){
+            return "no such order";
+        }else {
+            return "success";
+        }
+    }
+
     @RequestMapping("order/details")
     public String details(@RequestParam String orderNumber,Model model){
         model.addAttribute("order",orderService.getOrderByNumber(orderNumber));
         return "order/details";
     }
+    @RequestMapping("order/detailsAndUpdate")
+    public String detailsAndUpdate(@RequestParam String orderNumber,Model model){
+        model.addAttribute("order",orderService.getOrderByNumber(orderNumber));
+        model.addAttribute("states", OrderState.values());
+        return "order/details";
+    }
+
     @RequestMapping (value = "order/confirm", produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String confirm(@RequestParam Integer orderId){
@@ -94,6 +120,25 @@ public class OrderController {
             return "error";
         }
     }
+    @RequestMapping (value = "order/handle", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String handle(@RequestParam Integer orderId,@RequestParam OrderState orderState){
+        if(orderService.updateOrderState(orderId,orderState.changeState())){
+            return "success";
+        }else{
+            return "error";
+        }
+    }
+    @RequestMapping (value = "order/update", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String update(@RequestParam Integer orderId,@RequestParam OrderState orderState){
+        if(orderService.updateOrderState(orderId,orderState)){
+            return "success";
+        }else{
+            return "error";
+        }
+    }
+
 
 
 }

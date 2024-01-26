@@ -41,7 +41,8 @@
     </select>
     <!-- 根据订单状态查询订单 -->
     <select id="getOrdersByStatus" resultMap="orderResultMap">
-        SELECT * FROM `order`
+        SELECT * FROM `order` o
+                 JOIN user u on u.user_id = o.user_id
         WHERE order_status = #{orderState}
     </select>
     <!-- 根据订单号查询订单 -->

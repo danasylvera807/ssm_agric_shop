@@ -108,10 +108,6 @@ public class UserController {
         model.addAttribute("user",userService.getByUserId(userId));
         return "user/info";
     }
-    @RequestMapping("user/toUpdateEmail")
-    public String toUpdateEmail(){
-        return "user/updateEmail";
-    }
     @RequestMapping(value = "user/update", produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String update(@RequestParam Integer userId,

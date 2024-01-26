@@ -16,5 +16,26 @@ public enum OrderState {
     public String getState() {
         return state;
     }
+
+    public OrderState changeState(){
+        OrderState o ;
+        switch (this){
+            case PENDING_PAYMENT:
+                o = PROCESSING;
+                break;
+            case PROCESSING:
+                o = SHIPPED;
+                break;
+            case SHIPPED:
+                o = DELIVERED;
+                break;
+            case DELIVERED:
+                o = COMPLETED;
+                break;
+            default:
+                o = COMPLETED;
+        }
+        return o;
+    }
 }
 

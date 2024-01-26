@@ -136,6 +136,28 @@
                         console.log(data.orderNumber);
 
                     } else if (layEvent === 'pay') {
+                        layer.confirm('确定支付订单吗？', function (index) {
+                            var requestData = {
+                                orderId: data.orderId,
+                                orderState: orderState
+                            };
+                            $.ajax({
+                                url: '<%=path%>/order/handle.do', // 替换成你的后端接口地址
+                                type: 'POST',
+                                data: requestData,
+                                success: function (response) {
+                                    // 请求成功时的处理
+                                    if(response == 'success'){
+                                        layer.msg('订单支付');
+                                        table_order.reload("orderTable");
+                                    }
+                                },
+                                error: function (error) {
+                                    // 请求失败时的处理
+                                    console.error('失败:', error);
+                                }
+                            });
+                        });
                         console.log('支付');
                     } else if (layEvent === 'confirm') {
                         var requestData = {
@@ -159,7 +181,7 @@
 
                         });
                     }else if (layEvent === 'cancel') {
-                        layer.confirm('确定删除该条数据吗？', function (index) {
+                        layer.confirm('确定取消订单吗？', function (index) {
                             var requestData = {
                                 orderId: data.orderId
                             };
@@ -180,8 +202,7 @@
                                 }
                             });
                         });
-
-                        console.log('取消订单')
+                        // console.log('取消订单')
                     }
                 });
             }

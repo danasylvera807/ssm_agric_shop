@@ -16,7 +16,7 @@ public interface OrderService {
     // 查询所有订单
     Map<String,Object> getAllOrders(int pageNum,int pageSize);
     //根据状态查询订单
-    Map<String,Object> getOrdersByStatus(OrderState orderState, int pageNum, int pageSize);
+    Map<String,Object> getOrdersByState(OrderState orderState, int pageNum, int pageSize);
     Order getOrderByNumber(String orderNumber);
     public Order getOrderByNumberAndUserId(String orderNumber,Integer userId);
     // 添加订单

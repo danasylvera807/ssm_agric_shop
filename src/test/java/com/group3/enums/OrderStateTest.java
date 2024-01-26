@@ -6,7 +6,6 @@ public class OrderStateTest {
 
     @Test
     public void getStatus() {
-        OrderState[] values = OrderState.values();
-        System.out.println();
+        System.out.println(OrderState.DELIVERED.changeState());
     }
 }
